@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <nav>
-          <a href="#home" class="logo-container">
-          <img src="images/bbbc-logo.png" alt="BBBC Molino Logo" class="logo-img">
-            <div class="logo-text">BBBC Molino</div>
-          </a>
+            <a href="#home" class="logo-container">
+                <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#beliefs">What We Believe</a></li>
                 <li class="dropdown">
@@ -41,9 +40,15 @@
     </header>
 
     <section class="hero" id="home">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="images/videos/church-hero.mp4" type="video/mp4">
+            <source src="videos/church-hero.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Welcome to <span class="highlight">Berean Bible Baptist Church</span></h1>
             <p>Building lives, strengthening faith, and serving our community through God's love</p>
+            <h1><span class="highlight">Berean Bible Baptist Church<br>Molino</span></h1>
             <a href="#visit" class="cta-button">Plan Your Visit</a>
         </div>
     </section>
@@ -53,7 +58,7 @@
         <div class="cards">
             <div class="card">
                 <div class="card-icon">📖</div>
-                <h3>The Bible "King James Version</h3>
+                <h3>The Bible "King James Version"</h3>
                 <p>We believe in the divine inspiration and authority of the Holy Scriptures as the complete revelation of God's will.</p>
             </div>
             <div class="card">
