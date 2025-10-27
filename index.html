@@ -1,10 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="refresh" content="0; url=https://www.bbbcmolino.org">
-    <title>Redirecting...</title>
-  </head>
-  <body>
-    <p>If you are not redirected automatically, <a href="https://www.bbbcmolino.org">click here</a>.</p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBBC Molino - Welcome</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BBBC Molino</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#beliefs">What We Believe</a></li>
+                <li class="dropdown">
+                    <a href="#ministries" class="dropbtn">Ministries ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#academy">Berean Academy</a>
+                        <a href="#college">Bible College</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#life" class="dropbtn">Church Life ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#word">The Word</a>
+                        <a href="#highlights">Highlights</a>
+                    </div>
+                </li>
+                <li><a href="#visit">Plan Your Visit</a></li>
+                <li><a href="#connect">Connect With Us</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to <span class="highlight">Berean Bible Baptist Church</span></h1>
+            <p>Building lives, strengthening faith, and serving our community through God's love</p>
+            <a href="#visit" class="cta-button">Plan Your Visit</a>
+        </div>
+    </section>
+
+    <section id="beliefs">
+        <h2>What We Believe</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h3>The Bible</h3>
+                <p>We believe in the divine inspiration and authority of the Holy Scriptures as the complete revelation of God's will.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">✝️</div>
+                <h3>The Gospel</h3>
+                <p>Salvation through faith in Jesus Christ alone, by grace through faith, not by works.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⛪</div>
+                <h3>The Church</h3>
+                <p>We are a community of believers called to worship, fellowship, and serve together in Christ's name.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ministries">
+        <h2>Our Ministries</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family Ministry</h3>
+                <p>Supporting families in their spiritual journey with programs for all ages.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👶</div>
+                <h3>Children's Ministry</h3>
+                <p>Nurturing young hearts with age-appropriate teaching and activities.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🙏</div>
+                <h3>Prayer Ministry</h3>
+                <p>Interceding for our church, community, and world through dedicated prayer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="academy">
+        <h2>Berean Academy</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Christian Education Excellence</h3>
+                <p>Providing quality Christian education that integrates faith and learning for students from preschool through high school.</p>
+            </div>
+            <div class="card">
+                <h3>Character Development</h3>
+                <p>Building strong moral character and biblical values in our students.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="college">
+        <h2>Bible College</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Theological Training</h3>
+                <p>Equipping believers for ministry through comprehensive biblical and theological education.</p>
+            </div>
+            <div class="card">
+                <h3>Ministry Preparation</h3>
+                <p>Developing leaders called to serve in various ministry capacities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="life">
+        <h2>Church Life</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🎵</div>
+                <h3>Worship Services</h3>
+                <p>Join us for uplifting worship and biblical teaching every Sunday morning and evening.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Bible Study</h3>
+                <p>Midweek Bible studies for deeper understanding of God's Word and fellowship.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Fellowship</h3>
+                <p>Building meaningful relationships through various church events and gatherings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="word">
+        <h2>The Word</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🎙️</div>
+                <h3>Recent Sermons</h3>
+                <p>Listen to our latest messages and teachings from Sunday services.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h3>Bible Resources</h3>
+                <p>Access study materials, devotionals, and biblical resources for spiritual growth.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <h3>Daily Devotions</h3>
+                <p>Start your day with inspirational devotionals and scripture readings.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlights">
+        <h2>Highlights</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3>Upcoming Events</h3>
+                <p>Stay informed about special services, conferences, and community activities.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌟</div>
+                <h3>Ministry Updates</h3>
+                <p>Recent achievements and testimonies from our various ministry programs.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📰</div>
+                <h3>Church News</h3>
+                <p>Latest announcements and updates from the BBBC family.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="visit">
+        <h2>Plan Your Visit</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🕐</div>
+                <h3>Service Times</h3>
+                <p>Sunday Morning: 9:00 AM & 11:00 AM<br>Sunday Evening: 6:00 PM<br>Wednesday: 7:00 PM</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚗</div>
+                <h3>Location & Parking</h3>
+                <p>Molino, Bacoor, Cavite. Free parking available for all services and events.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">❓</div>
+                <h3>What to Expect</h3>
+                <p>Friendly atmosphere, biblical preaching, and warm fellowship. Come as you are!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="connect">
+        <h2>Connect With Us</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>We'd love to meet you! Join us for worship and fellowship this Sunday.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📧</div>
+                <h3>Get In Touch</h3>
+                <p>Have questions? Reach out to us and we'll be happy to help.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <h3>Join a Community</h3>
+                <p>Connect with others through our small groups and ministries.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+        <p>Building lives. Strengthening faith. Serving community.</p>
+    </footer>
+
+    <script src="homepage.js"></script>
+</body>
 </html>
