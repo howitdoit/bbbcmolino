@@ -9,6 +9,24 @@ body {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: #333;
 }
+/* ========== HEADER LOGO ========== */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 50px;          /* adjust as needed */
+    height: 50px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;          /* adjust for your header color */
+}
 
 /* Header */
 header {
@@ -110,14 +128,17 @@ nav {
 }
 
 /* Hero Section */
+/* Hero Section */
 .hero {
     height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(48, 79, 138, 0.85) 0%, rgba(61, 99, 167, 0.85) 50%, rgba(61, 98, 168, 0.85) 100%),
+        url('images/building/church-building.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 0 2rem;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
     position: relative;
     overflow: hidden;
 }
