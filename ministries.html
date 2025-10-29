@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministries - BBBC Molino</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="solid">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="beliefs.html">What We Believe</a></li>
+                <li class="dropdown">
+                    <a href="ministries.html" class="dropbtn active">Ministries ▾</a>
+                    <div class="dropdown-content">
+                        <a href="academy.html">Berean Academy</a>
+                        <a href="college.html">Bible College</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="church-life.html" class="dropbtn">Church Life ▾</a>
+                    <div class="dropdown-content">
+                        <a href="the-word.html">The Word</a>
+                        <a href="highlights.html">Highlights</a>
+                    </div>
+                </li>
+                <li><a href="index.html#visit">Plan Your Visit</a></li>
+                <li><a href="index.html#connect">Connect With Us</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Ministries</h1>
+        <p>Serving God and our community through various ministries and programs</p>
+    </div>
+
+    <!-- Content Section -->
+    <section class="section-padding">
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family Ministry</h3>
+                <p>Supporting families in their spiritual journey with programs for all ages. We offer marriage enrichment, parenting classes, and family activities designed to strengthen the family unit.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👶</div>
+                <h3>Children's Ministry</h3>
+                <p>Nurturing young hearts with age-appropriate teaching and activities. Our programs include Sunday School, Vacation Bible School, and special children's events throughout the year.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👦</div>
+                <h3>Youth Ministry</h3>
+                <p>Empowering teens to grow in their faith and develop godly character. We provide mentorship, biblical teaching, and fellowship opportunities for young people.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎵</div>
+                <h3>Music Ministry</h3>
+                <p>Leading worship through music and song. Join our choir, praise team, or instrumental groups to use your musical gifts for God's glory.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🙏</div>
+                <h3>Prayer Ministry</h3>
+                <p>Interceding for our church, community, and world through dedicated prayer. Regular prayer meetings and intercessory prayer chains keep us connected to God.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3>Outreach Ministry</h3>
+                <p>Sharing the love of Christ in our community through evangelism, community service, and mission trips to reach the lost with the Gospel.</p>
+            </div>
+        </div>
+
+        <div class="ministry-highlight">
+            <h2>Special Ministry Programs</h2>
+            <div class="cards">
+                <div class="card featured-card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Berean Academy</h3>
+                    <p>Our Christian school providing quality education from preschool through high school, integrating biblical principles with academic excellence.</p>
+                    <a href="academy.html" class="contact-link">Learn More →</a>
+                </div>
+                <div class="card featured-card">
+                    <div class="card-icon">📚</div>
+                    <h3>Bible College</h3>
+                    <p>Training and equipping believers for ministry through comprehensive biblical and theological education.</p>
+                    <a href="college.html" class="contact-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible Baptist Church</h4>
+                <p>Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Service Times</h4>
+                <p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="beliefs.html">What We Believe</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="church-life.html">Church Life</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+            <p>Building lives. Strengthening faith. Serving community.</p>
+        </div>
+    </footer>
+
+    <script src="js/base.js"></script>
+</body>
+</html>

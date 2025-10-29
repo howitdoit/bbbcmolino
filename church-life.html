@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Life - BBBC Molino</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="solid">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="beliefs.html">What We Believe</a></li>
+                <li class="dropdown">
+                    <a href="ministries.html" class="dropbtn">Ministries ▾</a>
+                    <div class="dropdown-content">
+                        <a href="academy.html">Berean Academy</a>
+                        <a href="college.html">Bible College</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="church-life.html" class="dropbtn active">Church Life ▾</a>
+                    <div class="dropdown-content">
+                        <a href="the-word.html">The Word</a>
+                        <a href="highlights.html">Highlights</a>
+                    </div>
+                </li>
+                <li><a href="index.html#visit">Plan Your Visit</a></li>
+                <li><a href="index.html#connect">Connect With Us</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Church Life at BBBC</h1>
+        <p>Join us in worship, fellowship, and growing together as the body of Christ</p>
+    </div>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <!-- Weekly Activities -->
+        <h2>Our Weekly Schedule</h2>
+        <div class="schedule-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Activity</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sunday</strong></td>
+                        <td>7:45 AM</td>
+                        <td>Morning Worship</td>
+                        <td>Sunday School for all ages followed by worship service with biblical preaching</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sunday</strong></td>
+                        <td>4:45 PM</td>
+                        <td>Evening Service</td>
+                        <td>Continued worship, testimonies, and biblical teaching</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wednesday</strong></td>
+                        <td>5:45 PM</td>
+                        <td>Midweek Service</td>
+                        <td>Prayer meeting and Bible study for spiritual growth</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Friday</strong></td>
+                        <td>6:00 PM</td>
+                        <td>Youth Fellowship</td>
+                        <td>Activities and discipleship for teens and young adults</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Saturday</strong></td>
+                        <td>2:00 PM</td>
+                        <td>Soul Winning</td>
+                        <td>Community outreach and evangelism</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Worship & Service -->
+        <div class="ministry-highlight">
+            <h2>Experience Church Life</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🎵</div>
+                    <h3>Worship Services</h3>
+                    <p>Join us for uplifting worship and biblical teaching every Sunday morning and evening. Our services feature congregational singing, choir specials, and expository preaching from God's Word.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Bible Study</h3>
+                    <p>Midweek Bible studies for deeper understanding of God's Word and fellowship. We explore Scripture chapter by chapter, verse by verse, growing together in knowledge and faith.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Fellowship</h3>
+                    <p>Building meaningful relationships through various church events and gatherings. From church dinners to small group meetings, we prioritize connecting with one another in Christ.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Section with Image -->
+        <div class="content-section">
+            <div class="content-text">
+                <h3>Sunday School Programs</h3>
+                <p>Our Sunday School provides age-appropriate biblical instruction for everyone in the family. Each class is designed to help believers grow in their understanding of Scripture and application to daily life.</p>
+                <ul>
+                    <li>Nursery and Preschool (Ages 0-5)</li>
+                    <li>Children's Classes (Grades 1-6)</li>
+                    <li>Youth Classes (Grades 7-12)</li>
+                    <li>Adult Classes (Various topics)</li>
+                    <li>Senior Saints Fellowship</li>
+                </ul>
+                <p>All classes meet every Sunday at 7:45 AM before the morning worship service.</p>
+            </div>
+            <div class="content-image">
+                <img src="images/church-life/sunday-school.jpg" alt="Sunday School">
+            </div>
+        </div>
+
+        <div class="content-section reverse">
+            <div class="content-text">
+                <h3>Prayer Meetings</h3>
+                <p>Prayer is the foundation of our church life. We believe in the power of corporate prayer and make it a priority in everything we do.</p>
+                <ul>
+                    <li>Wednesday Evening Prayer Service</li>
+                    <li>Sunday Morning Prayer Time</li>
+                    <li>Monthly All-Night Prayer Vigil</li>
+                    <li>Prayer Chain for Urgent Needs</li>
+                    <li>Prayer Walking in the Community</li>
+                </ul>
+                <p>"The effective, fervent prayer of a righteous man availeth much." - James 5:16</p>
+            </div>
+            <div class="content-image">
+                <img src="images/church-life/prayer-meeting.jpg" alt="Prayer Meeting">
+            </div>
+        </div>
+
+        <!-- Special Programs -->
+        <div class="ministry-highlight">
+            <h2>Special Programs & Events</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4>🎊 End Year Thanksgiving</h4>
+                    <p>We gather to reflect on God's faithfulness and welcome the new year with worship, testimony, and prayer.</p>
+                </div>
+                <div class="info-box">
+                    <h4>📖 Vacation Bible School</h4>
+                    <p>Annual summer program for children featuring Bible lessons, crafts, games, and fellowship.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🏕️ Youth Camp</h4>
+                    <p>Annual retreat for spiritual refreshing, fellowship, and growth in a camp setting.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🍽️ Fellowship Meals</h4>
+                    <p>Regular potluck dinners and special meals to build relationships and enjoy time together.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Small Groups & Discipleship -->
+        <div class="content-section">
+            <div class="content-text">
+                <h3>Small Groups & Discipleship</h3>
+                <p>Grow deeper in your faith through small group Bible studies and one-on-one discipleship. These intimate settings provide opportunities for accountability, encouragement, and spiritual growth.</p>
+                <ul>
+                    <li>Men's Bible Study Groups</li>
+                    <li>Women's Bible Study Groups</li>
+                    <li>Couples' Fellowship Groups</li>
+                    <li>One-on-One Discipleship</li>
+                    <li>New Believers' Class</li>
+                </ul>
+                <a href="index.html#connect" class="contact-link">Join a Small Group →</a>
+            </div>
+            <div class="content-image">
+                <img src="images/church-life/small-group.jpg" alt="Small Group">
+            </div>
+        </div>
+
+        <!-- Music Ministry -->
+        <div class="content-section reverse">
+            <div class="content-text">
+                <h3>Music & Worship</h3>
+                <p>Music is an integral part of our worship. We sing traditional hymns and songs that glorify God and edify the saints. If you have musical gifts, we invite you to use them for God's glory.</p>
+                <ul>
+                    <li>Congregational Singing</li>
+                    <li>Church Choir</li>
+                    <li>Special Music Presentations</li>
+                    <li>Instrumental Accompaniment</li>
+                    <li>Youth Music Ministry</li>
+                </ul>
+                <p>Contact our music director to learn about opportunities to serve through music ministry.</p>
+            </div>
+            <div class="content-image">
+                <img src="images/church-life/music-ministry.jpg" alt="Music Ministry">
+            </div>
+        </div>
+
+        <!-- Getting Connected -->
+        <div class="ministry-highlight">
+            <h2>Get Connected</h2>
+            <div class="cards">
+                <div class="card featured-card">
+                    <div class="card-icon">👋</div>
+                    <h3>First Time Visitors</h3>
+                    <p>We're excited to meet you! When you visit, our greeters will welcome you warmly and help you feel at home. Don't hesitate to ask questions or let us know how we can serve you.</p>
+                    <a href="index.html#visit" class="contact-link">Plan Your Visit →</a>
+                </div>
+                <div class="card featured-card">
+                    <div class="card-icon">💪</div>
+                    <h3>Serve & Give Glory</h3>
+                    <p>Every person has gifts and talents that can be used for God's glory. Whether it's teaching, hospitality, technical support, or administrative help, we have opportunities to serve.</p>
+                    <a href="ministries.html" class="contact-link">Explore Ministry Opportunities →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible Baptist Church</h4>
+                <p>Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Service Times</h4>
+                <p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="beliefs.html">What We Believe</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="church-life.html">Church Life</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+            <p>Building lives. Strengthening faith. Serving community.</p>
+        </div>
+    </footer>
+
+    <script src="js/base.js"></script>
+</body>
+</html>

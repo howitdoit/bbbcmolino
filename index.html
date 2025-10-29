@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BBBC Molino - Welcome</title>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/homepage.css">
 </head>
 <body>
     <!-- Top Bar with Time and Date -->
     <div class="top-bar">
         <div class="top-bar-content">
             <div class="datetime-info">
-                <span class="icon">📅</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
                 <span id="currentDate"></span>
                 <span class="separator">|</span>
-                <span class="icon">🕐</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
                 <span id="currentTime"></span>
                 <span class="timezone">(Manila, PH)</span>
             </div>
@@ -23,27 +32,27 @@
 
     <header id="header">
         <nav>
-            <a href="#home" class="logo-container">
+            <a href="index.html" class="logo-container">
                 <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#beliefs">What We Believe</a></li>
+                <li><a href="index.html#beliefs">What We Believe</a></li>
                 <li class="dropdown">
-                    <a href="#ministries" class="dropbtn">Ministries ▾</a>
+                    <a href="ministries.html" class="dropbtn">Ministries ▾</a>
                     <div class="dropdown-content">
-                        <a href="#academy">Berean Academy</a>
-                        <a href="#college">Bible College</a>
+                        <a href="academy.html">Berean Academy</a>
+                        <a href="college.html">Bible College</a>
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#life" class="dropbtn">Church Life ▾</a>
+                    <a href="church-life.html" class="dropbtn">Church Life ▾</a>
                     <div class="dropdown-content">
-                        <a href="#word">The Word</a>
-                        <a href="#highlights">Highlights</a>
+                        <a href="the-word.html">The Word</a>
+                        <a href="highlights.html">Highlights</a>
                     </div>
                 </li>
-                <li><a href="#visit">Plan Your Visit</a></li>
-                <li><a href="#connect">Connect With Us</a></li>
+                <li><a href="index.html#visit">Plan Your Visit</a></li>
+                <li><a href="index.html#connect">Connect With Us</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMenu()">
                 <span></span>
@@ -53,10 +62,11 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <video autoplay muted loop playsinline class="hero-video">
-            <source src="images/videos/church-hero.mp4" type="video/mp4">
-            <source src="imagesvideos/church-hero.webm" type="video/webm">
+            <source src="videos/church-hero.mp4" type="video/mp4">
+            <source src="videos/church-hero.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
@@ -67,9 +77,11 @@
         </div>
     </section>
 
-    <section id="beliefs">
+    <!-- Beliefs Section -->
+    <section id="beliefs" class="section-padding">
         <h2>What We Believe</h2>
-        <div class="cards">
+        <div class="belief-container">
+            <div class="belief-info">
             <div class="card">
                 <div class="card-icon">📖</div>
                 <h3>The Bible "King James Version"</h3>
@@ -85,122 +97,12 @@
                 <h3>The Church</h3>
                 <p>We are a community of believers called to worship, fellowship, and serve together in Christ's name.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="ministries">
-        <h2>Our Ministries</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">👨‍👩‍👧‍👦</div>
-                <h3>Family Ministry</h3>
-                <p>Supporting families in their spiritual journey with programs for all ages.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">👶</div>
-                <h3>Children's Ministry</h3>
-                <p>Nurturing young hearts with age-appropriate teaching and activities.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🙏</div>
-                <h3>Prayer Ministry</h3>
-                <p>Interceding for our church, community, and world through dedicated prayer.</p>
             </div>
         </div>
     </section>
 
-    <section id="academy">
-        <h2>Berean Academy</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Christian Education Excellence</h3>
-                <p>Providing quality Christian education that integrates faith and learning for students from preschool through high school.</p>
-            </div>
-            <div class="card">
-                <h3>Character Development</h3>
-                <p>Building strong moral character and biblical values in our students.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="college">
-        <h2>Bible College</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Theological Training</h3>
-                <p>Equipping believers for ministry through comprehensive biblical and theological education.</p>
-            </div>
-            <div class="card">
-                <h3>Ministry Preparation</h3>
-                <p>Developing leaders called to serve in various ministry capacities.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="life">
-        <h2>Church Life</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">🎵</div>
-                <h3>Worship Services</h3>
-                <p>Join us for uplifting worship and biblical teaching every Sunday morning and evening.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📚</div>
-                <h3>Bible Study</h3>
-                <p>Midweek Bible studies for deeper understanding of God's Word and fellowship.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🤝</div>
-                <h3>Fellowship</h3>
-                <p>Building meaningful relationships through various church events and gatherings.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="word">
-        <h2>The Word</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">🎙️</div>
-                <h3>Recent Sermons</h3>
-                <p>Listen to our latest messages and teachings from Sunday services.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📖</div>
-                <h3>Bible Resources</h3>
-                <p>Access study materials, devotionals, and biblical resources for spiritual growth.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">💡</div>
-                <h3>Daily Devotions</h3>
-                <p>Start your day with inspirational devotionals and scripture readings.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="highlights">
-        <h2>Highlights</h2>
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">📅</div>
-                <h3>Upcoming Events</h3>
-                <p>Stay informed about special services, conferences, and community activities.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🌟</div>
-                <h3>Ministry Updates</h3>
-                <p>Recent achievements and testimonies from our various ministry programs.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">📰</div>
-                <h3>Church News</h3>
-                <p>Latest announcements and updates from the BBBC family.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="visit">
+    <!-- Plan Your Visit Section -->
+    <section id="visit" class="section-padding">
         <h2>Plan Your Visit</h2>
         <div class="visit-container">
             <div class="visit-info">
@@ -212,7 +114,7 @@
                 <div class="card">
                     <div class="card-icon">🚗</div>
                     <h3>Location & Parking</h3>
-                    <p>Molino, Bacoor, Cavite<br>Free parking available for all services and events.</p>
+                    <p>Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines<br>Free parking available for all services and events.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon">❓</div>
@@ -225,15 +127,17 @@
             <div class="location-details">
                 <div class="map-container">
                     <h3>📍 Find Us</h3>
+                    <p class="address-text">Magdiwang Road, Molino 2, Bacoor, 4102 Cavite, Philippines</p>
                     <div class="map-wrapper">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.376026984156!2d120.98200747573884!3d14.4054739818229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d22b037f3787%3A0x27b4beb7ecd5a3f4!2sBerean%20Bible%20Baptist%20Church!5e0!3m2!1sen!2sph!4v1761609468014!5m2!1sen!2sph" 
-                        width="600" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>"
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.916!2d120.9819!3d14.4082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d3c5c8e5e5e5%3A0x0!2sBerean%20Bible%20Baptist%20Church!5e0!3m2!1sen!2sph!4v1635000000000"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
 
@@ -247,7 +151,8 @@
         </div>
     </section>
 
-    <section id="connect">
+    <!-- Connect With Us Section -->
+    <section id="connect" class="section-padding">
         <h2>Connect With Us</h2>
         <div class="cards">
             <div class="card">
@@ -259,20 +164,41 @@
                 <div class="card-icon">📧</div>
                 <h3>Get In Touch</h3>
                 <p>Have questions? Reach out to us and we'll be happy to help.</p>
+                <a href="mailto:info@bbbcmolino.org" class="contact-link">info@bbbcmolino.org</a>
             </div>
             <div class="card">
                 <div class="card-icon">💬</div>
                 <h3>Join a Community</h3>
                 <p>Connect with others through our small groups and ministries.</p>
+                <a href="ministries.html" class="contact-link">Explore Ministries</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
-        <p>Building lives. Strengthening faith. Serving community.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible Baptist Church</h4>
+                <p>Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Service Times</h4>
+                <p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="beliefs.html">What We Believe</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="church-life.html">Church Life</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+            <p>Building lives. Strengthening faith. Serving community.</p>
+        </div>
     </footer>
 
-    <script src="homepage.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/homepage.js"></script>
 </body>
 </html>

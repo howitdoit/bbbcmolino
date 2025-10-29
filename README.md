@@ -1,6 +1,6 @@
 # Berean Bible Baptist Church Molino - Official Website
 
-Welcome to the official website repository for Berean Bible Baptist Church (BBBC) Molino. This is a modern, responsive church landing page built with HTML, CSS, and JavaScript.
+Welcome to the official website repository for Berean Bible Baptist Church (BBBC) Molino. This is a modern, responsive multi-page church website built with HTML, CSS, and JavaScript.
 
 ## 🌐 Live Website
 
@@ -11,11 +11,62 @@ Welcome to the official website repository for Berean Bible Baptist Church (BBBC
 ```
 bbbcmolino-website/
 │
-├── index.html          # Main HTML file
-├── homepage.css          # All styling and animations
-├── homepage.js           # JavaScript functionality
-└── README.md          # This file
+├── index.html              # Homepage (Hero, Visit, Connect)
+├── beliefs.html            # What We Believe page
+├── ministries.html         # Ministries page
+├── academy.html            # Berean Academy page
+├── college.html            # Bible College page
+├── church-life.html        # Church Life page
+├── the-word.html           # The Word page
+├── highlights.html         # Highlights/Events page
+│
+├── css/
+│   ├── base.css           # Shared styles (header, footer, common)
+│   ├── homepage.css       # Homepage-specific styles
+│   └── pages.css          # Internal pages styles
+│
+├── js/
+│   ├── base.js            # Shared scripts (navigation, time, protection)
+│   └── homepage.js        # Homepage-specific scripts (weather)
+│
+├── images/
+│   ├── logo/
+│   │   └── church-logo.png
+│   ├── building/
+│   ├── ministries/
+│   ├── events/
+│   └── gallery/
+│
+├── videos/
+│   ├── church-hero.mp4    # Hero background video
+│   └── church-hero.webm   # Fallback video format
+│
+└── README.md              # This file
 ```
+
+## 🎨 Design System
+
+### Base Components (Reusable)
+- **Top Bar**: Live date/time (Manila, PH timezone)
+- **Header/Navigation**: Transparent on homepage, solid on other pages
+- **Footer**: 3-column layout with contact info, service times, and quick links
+- **Cards**: Consistent card design across all pages
+
+### Pages Overview
+
+#### Homepage (`index.html`)
+- Hero section with video background
+- Plan Your Visit (with map and weather)
+- Connect With Us
+
+#### Internal Pages
+- **beliefs.html**: Core beliefs and doctrines
+- **ministries.html**: All church ministries
+- **academy.html**: Berean Academy information
+- **college.html**: Bible College details
+- **church-life.html**: Worship, Bible study, fellowship
+- **the-word.html**: Sermons, resources, devotions
+- **highlights.html**: Events, updates, news
 
 ## 🚀 Deployment Setup (GitHub Pages)
 
@@ -29,9 +80,8 @@ bbbcmolino-website/
 1. **Create a new repository on GitHub:**
    - Go to [github.com](https://github.com)
    - Click "New Repository"
-   - Name it: `bbbcmolino-website` (or any name you prefer)
+   - Name it: `bbbcmolino-website`
    - Keep it Public
-   - Don't initialize with README (we already have one)
    - Click "Create Repository"
 
 2. **Push your code to GitHub:**
@@ -39,7 +89,7 @@ bbbcmolino-website/
    # Navigate to your project folder
    cd /path/to/your/project
 
-   # Initialize git (if not already done)
+   # Initialize git
    git init
 
    # Add all files
@@ -75,7 +125,7 @@ bbbcmolino-website/
 3. Click **Save**
 4. Check the box "Enforce HTTPS" (after DNS propagates)
 
-#### On Your Domain Registrar (where you bought bbbcmolino.org):
+#### On Your Domain Registrar:
 
 Add the following DNS records:
 
@@ -105,7 +155,7 @@ Host: www
 Value: YOUR-GITHUB-USERNAME.github.io
 ```
 
-**Note:** DNS changes can take 24-48 hours to propagate fully, but often work within a few hours.
+**Note:** DNS changes can take 24-48 hours to propagate.
 
 ### Step 4: Verify Setup
 
@@ -115,10 +165,10 @@ Value: YOUR-GITHUB-USERNAME.github.io
 
 ## 🔄 Automatic Updates
 
-Once set up, your website will automatically update whenever you push changes to GitHub:
+Once set up, your website will automatically update whenever you push changes:
 
 ```bash
-# Make your changes to index.html, homepage.css, or homepage.js
+# Make your changes to any HTML, CSS, or JS files
 
 # Stage changes
 git add .
@@ -135,39 +185,69 @@ git push origin main
 ## 📝 Making Changes
 
 ### Editing Content
-- **Text content**: Edit `index.html`
-- **Styling/colors**: Edit `homepage.css`
-- **Functionality**: Edit `homepage.js`
+
+**Homepage:**
+- Edit `index.html` for hero, visit, connect sections
+- Edit `css/homepage.css` for homepage-specific styling
+- Edit `js/homepage.js` for weather and homepage features
+
+**Internal Pages:**
+- Edit individual page files (`beliefs.html`, `ministries.html`, etc.)
+- Styling is in `css/pages.css`
+
+**Header/Footer (All Pages):**
+- Edit `css/base.css` for styling
+- Changes apply to ALL pages automatically
+
+### Adding a New Page
+
+1. Copy an existing page (e.g., `beliefs.html`)
+2. Rename it (e.g., `new-page.html`)
+3. Update the content
+4. Add navigation link in header of all pages
+5. Add link in footer if needed
 
 ### Common Updates:
 
-**Change service times:**
+**Change service times (all pages):**
 ```html
-<!-- In index.html, find the #visit section -->
-<p>Sunday Morning: 9:00 AM & 11:00 AM<br>Sunday Evening: 6:00 PM<br>Wednesday: 7:00 PM</p>
+<!-- In footer of each page -->
+<p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
 ```
 
 **Change colors:**
 ```css
-/* In homepage.css */
-/* Blue: #1e3c72, #2a5298 */
-/* Yellow: #ffd700 */
+/* In css/base.css */
+/* Primary Blue: #1e3c72 */
+/* Light Blue: #6495ED */
+/* Change these throughout the file */
 ```
 
-**Add new section:**
-1. Copy an existing `<section>` in `index.html`
-2. Change the `id` and content
-3. Add link in navigation
+**Update logo:**
+- Replace `images/logo/church-logo.png`
+- Keep filename the same, or update all HTML files
 
 ## 🎨 Features
 
+- ✅ Multi-page website with consistent design
+- ✅ Reusable header and footer components
 - ✅ Fully responsive design (mobile, tablet, desktop)
-- ✅ Dropdown menu for Ministries section
+- ✅ Dropdown menus for navigation
+- ✅ Live Manila time and date in top bar
+- ✅ Video background hero section
+- ✅ Google Maps integration
+- ✅ Live weather widget
 - ✅ Smooth scrolling navigation
-- ✅ Animated hero section
-- ✅ Blue and yellow color scheme
-- ✅ Modern card-based layout
-- ✅ Fast loading times
+- ✅ Image and video protection
+- ✅ Modern card-based layouts
+- ✅ White and light blue color scheme
+
+## 🔒 Security Features
+
+- Right-click disabled on images and videos
+- Drag-and-drop protection
+- Keyboard shortcut blocking (Ctrl+S, F12)
+- CSS user-select prevention
 
 ## 🛠️ Troubleshooting
 
@@ -176,15 +256,15 @@ git push origin main
 2. Clear browser cache (Ctrl+F5 or Cmd+Shift+R)
 3. Wait 2-3 minutes for deployment
 
-### Domain not working?
-1. Verify DNS records are correct
-2. Wait up to 48 hours for DNS propagation
-3. Check GitHub Pages status in Settings > Pages
+### Navigation not working?
+1. Ensure all page files are in root directory
+2. Check file names match exactly (case-sensitive)
+3. Verify links in navigation menus
 
-### Mobile menu not working?
-1. Ensure all three files (HTML, CSS, JS) are in the same folder
-2. Check browser console for JavaScript errors
-3. Make sure `script.js` is linked in `index.html`
+### Styles not applying?
+1. Check CSS file paths in HTML
+2. Ensure `css/base.css` is loaded first
+3. Clear browser cache
 
 ## 📞 Support
 
@@ -194,7 +274,7 @@ For technical issues with the website:
 
 For church-related inquiries:
 - Visit: [www.bbbcmolino.org](https://www.bbbcmolino.org)
-- Email: [Contact through website]
+- Location: Magdiwang Road, Molino 2, Bacoor, 4102 Cavite
 
 ## 📄 License
 
