@@ -34,7 +34,7 @@ img, video {
 /* ========== TOP BAR ========== */
 .top-bar {
     background: white;
-    color: 1e3c72;
+    color: #1e3c72;
     padding: 0.5rem 0;
     position: fixed;
     width: 100%;
@@ -304,6 +304,26 @@ section h2 {
 .contact-link:hover {
     color: #1e3c72;
     text-decoration: underline;
+}
+
+/* Email Button */
+.btn-contact {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #1e3c72 0%, #6495ED 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(100, 149, 237, 0.3);
+}
+
+.btn-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(100, 149, 237, 0.5);
+    background: linear-gradient(135deg, #6495ED 0%, #1e3c72 100%);
 }
 
 /* ========== FOOTER ========== */
