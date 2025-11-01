@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Word - BBBC Molino</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="solid">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#beliefs">What We Believe</a></li>
+                <li class="dropdown">
+                    <a href="ministries.html" class="dropbtn">Ministries ▾</a>
+                    <div class="dropdown-content">
+                        <a href="academy/index.html">Berean Academy</a>
+                        <a href="college/index.html">Bible College</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="church-life.html" class="dropbtn">Church Life ▾</a>
+                    <div class="dropdown-content">
+                        <a href="the-word.html" class="active">The Word</a>
+                        <a href="highlights.html">Highlights</a>
+                    </div>
+                </li>
+                <li><a href="index.html#visit">Plan Your Visit</a></li>
+                <li><a href="index.html#connect">Connect With Us</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>The Word</h1>
+        <p>Preachings, Bible Studies, and Resources for Spiritual Growth</p>
+    </div>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <!-- Recent Sermons -->
+        <h2>Recent Preachings</h2>
+        
+        <div class="sermon-card">
+            <div class="sermon-thumbnail">
+                <img src="images/sermons/sermon-1.jpg" alt="Sermon Thumbnail">
+            </div>
+            <div class="sermon-info">
+                <h4>Walking by Faith, Not by Sight</h4>
+                <div class="sermon-meta">
+                    <span>📅 January 26, 2025</span>
+                    <span>👤 Pastor [Name]</span>
+                    <span>📖 2 Corinthians 5:7</span>
+                </div>
+                <p class="sermon-description">
+                    In this message, we explore what it means to live by faith rather than relying on what we can see. Learn how trusting God's promises transforms our daily walk with Christ.
+                </p>
+                <div class="sermon-actions">
+                    <a href="#" class="btn btn-primary">▶ Listen Now</a>
+                    <a href="#" class="btn btn-secondary">⬇ Download</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sermon-card">
+            <div class="sermon-thumbnail">
+                <img src="images/sermons/sermon-2.jpg" alt="Sermon Thumbnail">
+            </div>
+            <div class="sermon-info">
+                <h4>The Power of Prayer in the Life of a Believer</h4>
+                <div class="sermon-meta">
+                    <span>📅 January 19, 2025</span>
+                    <span>👤 Pastor [Name]</span>
+                    <span>📖 James 5:16</span>
+                </div>
+                <p class="sermon-description">
+                    Discover the incredible power available to believers through prayer. This message examines biblical principles of effective prayer and how to maintain a consistent prayer life.
+                </p>
+                <div class="sermon-actions">
+                    <a href="#" class="btn btn-primary">▶ Listen Now</a>
+                    <a href="#" class="btn btn-secondary">⬇ Download</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sermon-card">
+            <div class="sermon-thumbnail">
+                <img src="images/sermons/sermon-3.jpg" alt="Sermon Thumbnail">
+            </div>
+            <div class="sermon-info">
+                <h4>The Great Commission: Go and Make Disciples</h4>
+                <div class="sermon-meta">
+                    <span>📅 January 12, 2025</span>
+                    <span>👤 Pastor [Name]</span>
+                    <span>📖 Matthew 28:19-20</span>
+                </div>
+                <p class="sermon-description">
+                    Christ's final command to His disciples applies to us today. Learn how every believer can participate in fulfilling the Great Commission in our daily lives.
+                </p>
+                <div class="sermon-actions">
+                    <a href="#" class="btn btn-primary">▶ Listen Now</a>
+                    <a href="#" class="btn btn-secondary">⬇ Download</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bible Study Resources -->
+        <div class="ministry-highlight">
+            <h2>Bible Study Resources</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">📖</div>
+                    <h3>Book Studies</h3>
+                    <p>In-depth verse-by-verse studies of various books of the Bible. Join us as we explore God's Word chapter by chapter.</p>
+                    <a href="#" class="contact-link">Browse Studies →</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>Study Guides</h3>
+                    <p>Downloadable study guides and notes to help you dig deeper into Scripture and apply biblical truth to your life.</p>
+                    <a href="#" class="contact-link">Download Guides →</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Topical Studies</h3>
+                    <p>Explore what the Bible says about specific topics including prayer, faith, marriage, parenting, and Christian living.</p>
+                    <a href="#" class="contact-link">View Topics →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Devotions -->
+        <div class="content-section">
+            <div class="content-text">
+                <h3>Daily Devotions</h3>
+                <p>Start your day with God's Word. Our daily devotionals provide scripture readings, reflections, and practical applications to help you grow in your faith.</p>
+                <ul>
+                    <li>Monday - Friday devotional emails</li>
+                    <li>Scripture reading plans</li>
+                    <li>Practical application points</li>
+                    <li>Prayer prompts</li>
+                    <li>Memory verses</li>
+                </ul>
+                <a href="#" class="contact-link">Subscribe to Daily Devotions →</a>
+            </div>
+            <div class="content-image">
+                <img src="images/word/devotions.jpg" alt="Daily Devotions">
+            </div>
+        </div>
+
+        <!-- Sunday School Materials -->
+        <div class="content-section reverse">
+            <div class="content-text">
+                <h3>Sunday School Materials</h3>
+                <p>Resources for teachers and students to make the most of Sunday School. Access lesson plans, activity sheets, and teaching aids for all age groups.</p>
+                <ul>
+                    <li>Age-appropriate lesson plans</li>
+                    <li>Activity and coloring sheets</li>
+                    <li>Memory verse cards</li>
+                    <li>Teacher training resources</li>
+                    <li>Curriculum guides</li>
+                </ul>
+                <a href="#" class="contact-link">Access Materials →</a>
+            </div>
+            <div class="content-image">
+                <img src="images/word/sunday-school-materials.jpg" alt="Sunday School Materials">
+            </div>
+        </div>
+
+        <!-- Sermon Archive -->
+        <div class="ministry-highlight">
+            <h2>Preachings Archive</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Browse our complete preaching library organized by date, speaker, book of the Bible, or topic.
+            </p>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4>📅 By Date</h4>
+                    <p>Access preaching chronologically from our most recent messages to archived teachings.</p>
+                    <a href="#" class="contact-link">View by Date →</a>
+                </div>
+                <div class="info-box">
+                    <h4>📖 By Book</h4>
+                    <p>Find all preachings preached from specific books of the Bible for systematic study.</p>
+                    <a href="#" class="contact-link">View by Book →</a>
+                </div>
+                <div class="info-box">
+                    <h4>🏷️ By Topic</h4>
+                    <p>Search preachings by topic or theme for targeted study on specific subjects.</p>
+                    <a href="#" class="contact-link">View by Topic →</a>
+                </div>
+                <div class="info-box">
+                    <h4>👤 By Speaker</h4>
+                    <p>Listen to messages from different speakers and guest preachers who have ministered at BBBC.</p>
+                    <a href="#" class="contact-link">View by Speaker →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommended Resources -->
+        <h2>Recommended Resources</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Bible Reading Plans</h3>
+                <p>Structured plans to help you read through the entire Bible systematically. One-year, chronological, and topical plans available.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎧</div>
+                <h3>Podcast</h3>
+                <p>Subscribe to our podcast to receive new preachings and teachings automatically on your favorite podcast platform.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>Mobile App</h3>
+                <p>Access preachings, devotionals, and Bible studies on-the-go with our mobile app for iOS and Android.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible Baptist Church</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Worship Times</h4>
+                <p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html#beliefs">What We Believe</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="church-life.html">Church Life</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+            <p>Building lives. Strengthening faith. Serving community.</p>
+        </div>
+    </footer>
+
+    <script src="js/base.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlights - BBBC Molino</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="solid">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#beliefs">What We Believe</a></li>
+                <li class="dropdown">
+                    <a href="ministries.html" class="dropbtn">Ministries ▾</a>
+                    <div class="dropdown-content">
+                        <a href="academy/index.html">Berean Academy</a>
+                        <a href="college/index.html">Bible College</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="church-life.html" class="dropbtn">Church Life ▾</a>
+                    <div class="dropdown-content">
+                        <a href="the-word.html">The Word</a>
+                        <a href="highlights.html" class="active">Highlights</a>
+                    </div>
+                </li>
+                <li><a href="index.html#visit">Plan Your Visit</a></li>
+                <li><a href="index.html#connect">Connect With Us</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Church Highlights</h1>
+        <p>Celebrating God's work in our church and community</p>
+    </div>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <!-- Upcoming Events -->
+        <h2>Upcoming Events</h2>
+        <div class="cards">
+            <div class="card event-card">
+                <div class="event-date">
+                    <div class="month">FEB</div>
+                    <div class="day">15</div>
+                </div>
+                <h3>Family Camp 2025</h3>
+                <p><strong>📍 Camp Location TBA</strong></p>
+                <p>Join us for our annual family camp featuring Bible teaching, worship, fellowship, and outdoor activities for all ages.</p>
+                <a href="#" class="contact-link">Register Now →</a>
+            </div>
+            <div class="card event-card">
+                <div class="event-date">
+                    <div class="month">MAR</div>
+                    <div class="day">8</div>
+                </div>
+                <h3>Mission Conference</h3>
+                <p><strong>📍 BBBC Molino</strong></p>
+                <p>Three days of missionary testimonies, challenges, and inspiration to reach the world for Christ.</p>
+                <a href="#" class="contact-link">Learn More →</a>
+            </div>
+            <div class="card event-card">
+                <div class="event-date">
+                    <div class="month">APR</div>
+                    <div class="day">20</div>
+                </div>
+                <h3>Easter Celebration</h3>
+                <p><strong>📍 BBBC Molino</strong></p>
+                <p>Special services celebrating the resurrection of our Lord Jesus Christ with music, drama, and powerful preaching.</p>
+                <a href="#" class="contact-link">Details Coming Soon →</a>
+            </div>
+        </div>
+
+        <!-- Recent Events Timeline -->
+        <div class="ministry-highlight">
+            <h2>Recent Events</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">January 5, 2025</span>
+                        <h4>End Year Thanksgiving Service</h4>
+                        <p>We gathered as a church family to thank God for His faithfulness throughout the year. Members shared testimonies of God's provision, healing, and answered prayers.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/events/thanksgiving-2025.jpg" alt="Thanksgiving Service">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">December 24, 2024</span>
+                        <h4>Christmas Program</h4>
+                        <p>Our annual Christmas celebration featured children's presentations, choir performances, and a powerful message about the birth of our Savior. Over 200 people attended.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/events/christmas-2024.jpg" alt="Christmas Program">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">November 15, 2024</span>
+                        <h4>Youth Revival</h4>
+                        <p>Three nights of powerful preaching and worship specifically for young people. Many made commitments to serve Christ and several answered the call to ministry.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/events/youth-revival-2024.jpg" alt="Youth Revival">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">October 20, 2024</span>
+                        <h4>Music Camp</h4>
+                        <p>Musicians and singers from our church and other churches gathered for training in worship ministry, learning new songs, and developing their musical gifts.</p>
+                    </div>
+                    <div class="timeline-image">
+                        <img src="images/events/music-camp-2024.jpg" alt="Music Camp">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ministry Updates -->
+        <h2>Ministry Updates</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Sunday School Growth</h3>
+                <p>Our Sunday School classes have seen steady growth with new families joining. We've added a new class for young adults and expanded our children's ministry.</p>
+                <p class="update-date">📅 Updated: January 2025</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>Missions Support</h3>
+                <p>BBBC continues to support 5 missionary families serving in different parts of the Philippines and abroad. Monthly missionary updates available in the church bulletin.</p>
+                <p class="update-date">📅 Updated: January 2025</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏗️</div>
+                <h3>Building Project Update</h3>
+                <p>Construction continues on our new fellowship hall. We praise God for His provision and thank everyone who has contributed to this project.</p>
+                <p class="update-date">📅 Updated: January 2025</p>
+            </div>
+        </div>
+
+        <!-- Testimonies -->
+        <div class="ministry-highlight">
+            <h2>Testimonies</h2>
+            <div class="testimony-section">
+                <div class="testimony-card">
+                    <div class="testimony-quote">"</div>
+                    <p class="testimony-text">
+                        "I came to BBBC Molino searching for a church home where I could grow in my faith. The biblical preaching and warm fellowship have helped me tremendously. I've learned so much about God's Word and what it means to live for Christ."
+                    </p>
+                    <p class="testimony-author">- Sister Maria R.</p>
+                </div>
+
+                <div class="testimony-card">
+                    <div class="testimony-quote">"</div>
+                    <p class="testimony-text">
+                        "Our family has been blessed by the children's ministry at BBBC. Our kids love Sunday School and are learning to hide God's Word in their hearts. We're grateful for teachers who genuinely care about our children's spiritual growth."
+                    </p>
+                    <p class="testimony-author">- Brother & Sister Santos Family</p>
+                </div>
+
+                <div class="testimony-card">
+                    <div class="testimony-quote">"</div>
+                    <p class="testimony-text">
+                        "The discipleship program at BBBC has been instrumental in my spiritual growth. Through one-on-one mentoring and Bible study, I've developed a deeper understanding of Scripture and a stronger walk with God."
+                    </p>
+                    <p class="testimony-author">- Brother John D.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photo Gallery -->
+        <h2>Photo Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/gallery/worship-service.jpg" alt="Worship Service">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery/baptism.jpg" alt="Baptism Service">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery/youth-group.jpg" alt="Youth Group">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery/fellowship-meal.jpg" alt="Fellowship Meal">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery/sunday-school.jpg" alt="Sunday School">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery/choir.jpg" alt="Church Choir">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery/outreach.jpg" alt="Community Outreach">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery/prayer-meeting.jpg" alt="Prayer Meeting">
+            </div>
+        </div>
+
+        <!-- Church Announcements -->
+        <div class="ministry-highlight">
+            <h2>Church Announcements</h2>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4>📢 New Member Class</h4>
+                    <p>Interested in church membership? Our next new member class begins February 1st. Contact the church office to register.</p>
+                </div>
+                <div class="info-box">
+                    <h4>📖 Bible Study Sign-Up</h4>
+                    <p>Small group Bible studies starting in February. Choose from morning, afternoon, or evening groups. Sign-up sheets available in the foyer.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🎵 Choir Practice</h4>
+                    <p>The church choir welcomes new members! Practice every Thursday at 6:30 PM. No audition required, just a heart for worship.</p>
+                </div>
+                <div class="info-box">
+                    <h4>🙏 Prayer Request</h4>
+                    <p>Submit prayer requests through our website, prayer box in the foyer, or speak with a pastor or deacon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible Baptist Church</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Worship Times</h4>
+                <p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html#beliefs">What We Believe</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="church-life.html">Church Life</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+            <p>Building lives. Strengthening faith. Serving community.</p>
+        </div>
+    </footer>
+
+    <script src="js/base.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berean Bible College - Training Servants for Ministry</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="css/college.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/college-logo.png" alt="Bible College Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" class="church-link">← Back to Church</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="college-hero" id="home">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="videos/college-hero.mp4" type="video/mp4">
+            <source src="videos/college-hero.webm" type="video/webm">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Berean Bible College</h1>
+            <p class="hero-subtitle">Training Servants for Ministry</p>
+            <p class="hero-verse">"Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth." - 2 Timothy 2:15</p>
+            <a href="#programs" class="cta-button">View Programs</a>
+            <a href="admissions.html" class="cta-button-outline">Apply Today</a>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="section-padding">
+        <div class="mission-section">
+            <h2>Our Mission</h2>
+            <p class="mission-text">Berean Bible College exists to train and equip believers for effective ministry through comprehensive biblical and theological education. We are committed to developing servants who will faithfully proclaim the Word of God and serve the local church with excellence.</p>
+        </div>
+    </section>
+
+    <!-- Programs Overview -->
+    <section id="programs" class="programs-section">
+        <h2>Academic Programs</h2>
+        <div class="cards">
+            <div class="card program-card">
+                <div class="card-icon">📜</div>
+                <h3>Certificate in Ministry</h3>
+                <p><strong>1 Year Program</strong></p>
+                <p>Foundation courses in Bible, theology, and practical ministry skills for those beginning their ministry journey.</p>
+                <ul class="program-highlights">
+                    <li>Bible Survey</li>
+                    <li>Basic Theology</li>
+                    <li>Ministry Practicum</li>
+                </ul>
+                <a href="programs.html#certificate" class="contact-link">Learn More →</a>
+            </div>
+            <div class="card program-card">
+                <div class="card-icon">🎓</div>
+                <h3>Diploma in Theology</h3>
+                <p><strong>2 Year Program</strong></p>
+                <p>In-depth study of Scripture and theology with practical application for church ministry and leadership.</p>
+                <ul class="program-highlights">
+                    <li>Systematic Theology</li>
+                    <li>Biblical Languages</li>
+                    <li>Homiletics</li>
+                </ul>
+                <a href="programs.html#diploma" class="contact-link">Learn More →</a>
+            </div>
+            <div class="card program-card">
+                <div class="card-icon">📚</div>
+                <h3>Bachelor of Theology</h3>
+                <p><strong>4 Year Program</strong></p>
+                <p>Comprehensive theological education preparing graduates for pastoral ministry, missions, and teaching.</p>
+                <ul class="program-highlights">
+                    <li>Advanced Biblical Studies</li>
+                    <li>Church History</li>
+                    <li>Ministry Leadership</li>
+                </ul>
+                <a href="programs.html#bachelor" class="contact-link">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Berean Bible College -->
+    <section class="why-section">
+        <h2>Why Study at Berean Bible College?</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon">📖</div>
+                <h3>Biblical Foundation</h3>
+                <p>Emphasis on expository preaching and sound biblical interpretation</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>Experienced Faculty</h3>
+                <p>Learn from pastors and teachers with proven ministry experience</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">⛪</div>
+                <h3>Church-Based Training</h3>
+                <p>Practical ministry experience through local church involvement</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">💰</div>
+                <h3>Affordable Tuition</h3>
+                <p>Quality theological education at accessible rates</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🎯</div>
+                <h3>Practical Ministry</h3>
+                <p>Hands-on training in preaching, teaching, and church leadership</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🤝</div>
+                <h3>Mentorship</h3>
+                <p>Personal guidance from experienced ministers and faculty</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Offered -->
+    <section class="courses-section">
+        <h2>Core Course Areas</h2>
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>📖 Biblical Studies</h4>
+                <p>Old Testament Survey, New Testament Survey, Bible Interpretation, Book Studies</p>
+            </div>
+            <div class="info-box">
+                <h4>✝️ Systematic Theology</h4>
+                <p>Bibliology, Theology Proper, Christology, Pneumatology, Soteriology, Ecclesiology, Eschatology</p>
+            </div>
+            <div class="info-box">
+                <h4>🎤 Practical Ministry</h4>
+                <p>Homiletics, Pastoral Theology, Church Administration, Counseling, Discipleship</p>
+            </div>
+            <div class="info-box">
+                <h4>📜 Biblical Languages</h4>
+                <p>Biblical Hebrew, New Testament Greek, Textual Studies</p>
+            </div>
+            <div class="info-box">
+                <h4>🕰️ Church History</h4>
+                <p>Early Church, Reformation History, Baptist Heritage, Modern Church History</p>
+            </div>
+            <div class="info-box">
+                <h4>🌍 Missions & Evangelism</h4>
+                <p>Missiology, World Religions, Personal Evangelism, Church Planting</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Answer the Call to Ministry</h2>
+            <p>Take the next step in your ministry preparation. Apply to Berean Bible College today.</p>
+            <div class="cta-buttons">
+                <a href="admissions.html" class="btn-primary">Apply Now</a>
+                <a href="contact.html" class="btn-secondary">Request Information</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible College</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📞 Phone</p>
+                    <a href="tel:+639123456789" class="btn-contact">Call</a>
+                <p>✉️ Email</p>
+                    <a href="mailto:college@bbbcmolino.org" class="btn-contact">Send Email</a>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="programs.html">Programs</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="../index.html">Church Website</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible College. All rights reserved.</p>
+            <p>A ministry of Berean Bible Baptist Church Molino</p>
+        </div>
+    </footer>
+
+    <script src="../js/base.js"></script>
+</body>
+</html>
