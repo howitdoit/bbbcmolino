@@ -117,3 +117,55 @@ function updateDateTime() {
 
 updateDateTime();
 setInterval(updateDateTime, 1000);
+
+
+// Automatically load latest posts from Blogger
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://theword.bbbcmolino.org/feeds/posts/default?alt=rss")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("blog-feed");
+
+    if (!data.items || !Array.isArray(data.items)) {
+      throw new Error("Feed not loaded properly.");
+    }
+
+    const entries = data.items.slice(0, 6);
+    let html = '';
+
+    entries.forEach(entry => {
+      const title = entry.title || "Untitled";
+      const link = entry.link || "#";
+      const published = entry.pubDate
+        ? new Date(entry.pubDate).toLocaleDateString('en-PH', { year: 'numeric', month: 'long', day: 'numeric' })
+        : "Unknown date";
+      const summary = entry.description
+        ? entry.description.replace(/<[^>]+>/g, '').slice(0, 180) + '...'
+        : "No description available.";
+      const thumbnail = entry.thumbnail || "images/sermons/default.jpg";
+
+      html += `
+        <div class="sermon-card">
+          <div class="sermon-thumbnail">
+            <img src="${thumbnail}" alt="${title}">
+          </div>
+          <div class="sermon-info">
+            <h4>${title}</h4>
+            <div class="sermon-meta">
+              <span>📅 ${published}</span>
+            </div>
+            <p class="sermon-description">${summary}</p>
+            <div class="sermon-actions">
+              <a href="${link}" target="_blank" class="btn btn-primary">📖 Read More</a>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+  })
+  .catch(err => {
+    console.error("Error loading blog feed:", err);
+    document.getElementById("blog-feed").innerHTML =
+      "<p style='color:red;'>Unable to load preachings at the moment. Please try again later.</p>";
+  });
