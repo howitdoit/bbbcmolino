@@ -141,7 +141,7 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://theword.bbbcmolino.o
       const summary = entry.description
         ? entry.description.replace(/<[^>]+>/g, '').slice(0, 180) + '...'
         : "No description available.";
-      const thumbnail = entry.thumbnail || "images/sermons/default.jpg";
+      const thumbnail = entry.thumbnail || "images/logo/church-logo.png";
 
       html += `
         <div class="sermon-card">

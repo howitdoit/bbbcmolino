@@ -46,7 +46,7 @@ function loadBloggerFeed() {
           : "Unknown date";
         
         // Get thumbnail with higher resolution and better fallbacks
-        let thumbnail = "images/sermons/default.jpg";
+        let thumbnail = "images/logo/church-logo.png";
         
         // Try to get the best quality image with multiple fallback methods
         if (entry.thumbnail) {
