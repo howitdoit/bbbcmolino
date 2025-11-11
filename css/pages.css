@@ -278,7 +278,7 @@
     width: 100%;
     height: 250px;
     overflow: hidden;
-    background: #f0f0f0;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
 }
 
 .sermon-thumbnail img {
@@ -286,12 +286,31 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     -ms-interpolation-mode: bicubic;
     backface-visibility: hidden;
     transform: translateZ(0);
+    opacity: 0;
+    background: #f0f0f0;
+}
+
+/* Placeholder icon while image loads */
+.sermon-thumbnail::before {
+    content: '📖';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* Hide placeholder when image loads */
+.sermon-thumbnail img[style*="opacity: 1"] ~ ::before {
+    display: none;
 }
 
 .sermon-card:hover .sermon-thumbnail img {
@@ -322,16 +341,17 @@
 .sermon-info h4 {
     color: #1e3c72;
     font-size: 1.3rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     line-height: 1.4;
+    flex-grow: 1;
 }
 
 .sermon-meta {
     display: flex;
     gap: 1rem;
     color: #999;
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
 }
 
@@ -339,13 +359,6 @@
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-}
-
-.sermon-description {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
 }
 
 .sermon-actions {
@@ -402,6 +415,14 @@
     .sermon-thumbnail {
         height: 180px;
     }
+}
+
+/* Default placeholder if no image */
+.sermon-thumbnail img[src="images/sermons/default.jpg"],
+.sermon-thumbnail img[src*="default"] {
+    background: linear-gradient(135deg, #1e3c72 0%, #6495ED 100%);
+    object-fit: contain;
+    padding: 2rem;
 }
 
 /* Highlights Page - Timeline */

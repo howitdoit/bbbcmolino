@@ -45,53 +45,55 @@ function loadBloggerFeed() {
             })
           : "Unknown date";
         
-        // Extract plain text summary
-        let summary = "No description available.";
-        if (entry.description) {
-          const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = entry.description;
-          const plainText = tempDiv.textContent || tempDiv.innerText || "";
-          summary = plainText.slice(0, 180).trim();
-          if (plainText.length > 180) summary += '...';
-        }
-        
-        // Get thumbnail with higher resolution
+        // Get thumbnail with higher resolution and better fallbacks
         let thumbnail = "images/sermons/default.jpg";
         
-        // Try to get the best quality image
+        // Try to get the best quality image with multiple fallback methods
         if (entry.thumbnail) {
           // Replace Blogger thumbnail size parameters for higher quality
           thumbnail = entry.thumbnail
             .replace(/\/s72-c/, '/s600')  // Replace small thumbnail with larger
-            .replace(/\/s\d+-c/, '/s600'); // Replace any sized thumbnail with 600px
+            .replace(/\/s\d+-c/, '/s600') // Replace any sized thumbnail
+            .replace(/\/w\d+-h\d+/, '/s600'); // Replace width-height format
         } else if (entry.enclosure && entry.enclosure.link) {
           thumbnail = entry.enclosure.link;
         } else if (entry.content) {
           // Try to extract first image from content
-          const imgMatch = entry.content.match(/<img[^>]+src="([^">]+)"/);
+          const imgMatch = entry.content.match(/<img[^>]+src=["']([^"']+)["']/);
           if (imgMatch && imgMatch[1]) {
             thumbnail = imgMatch[1]
               .replace(/\/s72-c/, '/s600')
-              .replace(/\/s\d+-c/, '/s600');
+              .replace(/\/s\d+-c/, '/s600')
+              .replace(/\/w\d+-h\d+/, '/s600');
+          }
+        } else if (entry.description) {
+          // Last resort: try description field
+          const imgMatch = entry.description.match(/<img[^>]+src=["']([^"']+)["']/);
+          if (imgMatch && imgMatch[1]) {
+            thumbnail = imgMatch[1]
+              .replace(/\/s72-c/, '/s600')
+              .replace(/\/s\d+-c/, '/s600')
+              .replace(/\/w\d+-h\d+/, '/s600');
           }
         }
-        
-        // Extract author if available
-        const author = entry.author || "BBBC Molino";
 
         html += `
           <div class="sermon-card">
             <div class="sermon-thumbnail">
-              <img src="${thumbnail}" alt="${title}" onerror="this.src='images/sermons/default.jpg'">
+              <img 
+                src="${thumbnail}" 
+                alt="${title}" 
+                loading="lazy"
+                onload="this.style.opacity='1'"
+                onerror="this.onerror=null; this.src='images/sermons/default.jpg'; this.style.opacity='1';"
+              >
               <div class="sermon-badge">New</div>
             </div>
             <div class="sermon-info">
               <h4>${title}</h4>
               <div class="sermon-meta">
                 <span>📅 ${published}</span>
-                <span>👤 ${author}</span>
               </div>
-              <p class="sermon-description">${summary}</p>
               <div class="sermon-actions">
                 <a href="${link}" target="_blank" class="btn btn-primary">📖 Read More</a>
               </div>
