@@ -306,11 +306,13 @@
     font-size: 3rem;
     opacity: 0.3;
     z-index: 1;
+    transition: opacity 0.3s ease;
 }
 
-/* Hide placeholder when image loads */
-.sermon-thumbnail img[style*="opacity: 1"] ~ ::before {
-    display: none;
+/* Hide placeholder when image has loaded */
+.sermon-thumbnail.loaded::before {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .sermon-card:hover .sermon-thumbnail img {

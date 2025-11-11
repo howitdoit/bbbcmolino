@@ -84,7 +84,7 @@ function loadBloggerFeed() {
                 src="${thumbnail}" 
                 alt="${title}" 
                 loading="lazy"
-                onload="this.style.opacity='1'"
+                onload="this.parentElement.classList.add('loaded');this.style.opacity='1'"
                 onerror="this.onerror=null; this.src='images/sermons/default.jpg'; this.style.opacity='1';"
               >
               <div class="sermon-badge">New</div>
