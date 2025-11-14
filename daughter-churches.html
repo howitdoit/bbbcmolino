@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daughter Churches - BBBC Molino</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="solid">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#beliefs">What We Believe</a></li>
+                <li class="dropdown">
+                    <a href="ministries.html" class="dropbtn">Ministries ▾</a>
+                    <div class="dropdown-content">
+                        <a href="academy/index.html">Berean Academy</a>
+                        <a href="college/index.html">Bible College</a>
+                        <a href="daughter-churches.html" class="active">Daughter Churches</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="church-life.html" class="dropbtn">Church Life ▾</a>
+                    <div class="dropdown-content">
+                        <a href="the-word.html">The Word</a>
+                        <a href="highlights.html">Highlights</a>
+                    </div>
+                </li>
+                <li><a href="index.html#visit">Plan Your Visit</a></li>
+                <li><a href="index.html#connect">Connect With Us</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Daughter Churches</h1>
+        <p>Church planting ministry - Multiplying disciples and establishing local churches</p>
+    </div>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <!-- Introduction -->
+        <div class="intro-section">
+            <h2>Multiplying Ministry Through Church Planting</h2>
+            <p class="intro-text">
+                BBBC Molino is committed to the Great Commission through church planting. We have been blessed to plant and support 8 daughter churches throughout the region, each serving their local communities with the Gospel of Jesus Christ. These churches maintain fellowship with the mother church while being autonomous in their local ministry.
+            </p>
+        </div>
+
+        <!-- Daughter Churches Grid -->
+        <h2 style="margin-top: 3rem;">Our Daughter Churches</h2>
+        <div class="daughter-churches-grid">
+            <!-- Church 1 -->
+            <div class="church-card">
+                <div class="church-image">
+                    <img src="https://drive.google.com/uc?export=view&id=YOUR_CHURCH_1_ID" alt="Church 1" onerror="this.src='images/logo/church-logo.png'">
+                    <div class="church-badge">Est. 2015</div>
+                </div>
+                <div class="church-info">
+                    <h3>Berean Bile Baptist Church - San Ildefonso, Bulacan</h3>
+                    <p class="church-location">📍 Location, Malipampang, San Ildefonso, Bulacan</p>
+                    <p class="church-pastor">👤 Pastor: Bernard Magat</p>
+                    <p class="church-description">Brief description of the church's ministry and community impact.</p>
+                    <div class="church-actions">
+                        <a href="#" target="_blank" class="btn-church">🌐 Visit Website</a>
+                        <a href="#" target="_blank" class="btn-church-fb">📘 Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Church 2 -->
+            <div class="church-card">
+                <div class="church-image">
+                    <img src="https://drive.google.com/uc?export=view&id=YOUR_CHURCH_2_ID" alt="Church 2" onerror="this.src='images/logo/church-logo.png'">
+                    <div class="church-badge">Est. 2016</div>
+                </div>
+                <div class="church-info">
+                    <h3>Church Name 2</h3>
+                    <p class="church-location">📍 Location, City, Province</p>
+                    <p class="church-pastor">👤 Pastor: [Pastor Name]</p>
+                    <p class="church-description">Brief description of the church's ministry and community impact.</p>
+                    <div class="church-actions">
+                        <a href="#" target="_blank" class="btn-church">🌐 Visit Website</a>
+                        <a href="#" target="_blank" class="btn-church-fb">📘 Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Church 3 -->
+            <div class="church-card">
+                <div class="church-image">
+                    <img src="https://drive.google.com/uc?export=view&id=YOUR_CHURCH_3_ID" alt="Church 3" onerror="this.src='images/logo/church-logo.png'">
+                    <div class="church-badge">Est. 2017</div>
+                </div>
+                <div class="church-info">
+                    <h3>Church Name 3</h3>
+                    <p class="church-location">📍 Location, City, Province</p>
+                    <p class="church-pastor">👤 Pastor: [Pastor Name]</p>
+                    <p class="church-description">Brief description of the church's ministry and community impact.</p>
+                    <div class="church-actions">
+                        <a href="#" target="_blank" class="btn-church">🌐 Visit Website</a>
+                        <a href="#" target="_blank" class="btn-church-fb">📘 Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Church 4 -->
+            <div class="church-card">
+                <div class="church-image">
+                    <img src="https://drive.google.com/uc?export=view&id=YOUR_CHURCH_4_ID" alt="Church 4" onerror="this.src='images/logo/church-logo.png'">
+                    <div class="church-badge">Est. 2018</div>
+                </div>
+                <div class="church-info">
+                    <h3>Church Name 4</h3>
+                    <p class="church-location">📍 Location, City, Province</p>
+                    <p class="church-pastor">👤 Pastor: [Pastor Name]</p>
+                    <p class="church-description">Brief description of the church's ministry and community impact.</p>
+                    <div class="church-actions">
+                        <a href="#" target="_blank" class="btn-church">🌐 Visit Website</a>
+                        <a href="#" target="_blank" class="btn-church-fb">📘 Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Church 5 -->
+            <div class="church-card">
+                <div class="church-image">
+                    <img src="https://drive.google.com/uc?export=view&id=YOUR_CHURCH_5_ID" alt="Church 5" onerror="this.src='images/logo/church-logo.png'">
+                    <div class="church-badge">Est. 2019</div>
+                </div>
+                <div class="church-info">
+                    <h3>Church Name 5</h3>
+                    <p class="church-location">📍 Location, City, Province</p>
+                    <p class="church-pastor">👤 Pastor: [Pastor Name]</p>
+                    <p class="church-description">Brief description of the church's ministry and community impact.</p>
+                    <div class="church-actions">
+                        <a href="#" target="_blank" class="btn-church">🌐 Visit Website</a>
+                        <a href="#" target="_blank" class="btn-church-fb">📘 Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Church 6 -->
+            <div class="church-card">
+                <div class="church-image">
+                    <img src="https://drive.google.com/uc?export=view&id=YOUR_CHURCH_6_ID" alt="Church 6" onerror="this.src='images/logo/church-logo.png'">
+                    <div class="church-badge">Est. 2020</div>
+                </div>
+                <div class="church-info">
+                    <h3>Church Name 6</h3>
+                    <p class="church-location">📍 Location, City, Province</p>
+                    <p class="church-pastor">👤 Pastor: [Pastor Name]</p>
+                    <p class="church-description">Brief description of the church's ministry and community impact.</p>
+                    <div class="church-actions">
+                        <a href="#" target="_blank" class="btn-church">🌐 Visit Website</a>
+                        <a href="#" target="_blank" class="btn-church-fb">📘 Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Church 7 -->
+            <div class="church-card">
+                <div class="church-image">
+                    <img src="https://drive.google.com/uc?export=view&id=YOUR_CHURCH_7_ID" alt="Church 7" onerror="this.src='images/logo/church-logo.png'">
+                    <div class="church-badge">Est. 2021</div>
+                </div>
+                <div class="church-info">
+                    <h3>Church Name 7</h3>
+                    <p class="church-location">📍 Location, City, Province</p>
+                    <p class="church-pastor">👤 Pastor: [Pastor Name]</p>
+                    <p class="church-description">Brief description of the church's ministry and community impact.</p>
+                    <div class="church-actions">
+                        <a href="#" target="_blank" class="btn-church">🌐 Visit Website</a>
+                        <a href="#" target="_blank" class="btn-church-fb">📘 Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Church 8 -->
+            <div class="church-card">
+                <div class="church-image">
+                    <img src="https://drive.google.com/uc?export=view&id=YOUR_CHURCH_8_ID" alt="Church 8" onerror="this.src='images/logo/church-logo.png'">
+                    <div class="church-badge">Est. 2022</div>
+                </div>
+                <div class="church-info">
+                    <h3>Church Name 8</h3>
+                    <p class="church-location">📍 Location, City, Province</p>
+                    <p class="church-pastor">👤 Pastor: [Pastor Name]</p>
+                    <p class="church-description">Brief description of the church's ministry and community impact.</p>
+                    <div class="church-actions">
+                        <a href="#" target="_blank" class="btn-church">🌐 Visit Website</a>
+                        <a href="#" target="_blank" class="btn-church-fb">📘 Facebook Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Church Planting Vision -->
+        <div class="ministry-highlight">
+            <h2>Our Church Planting Vision</h2>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <div class="vision-icon">🌱</div>
+                    <h3>Plant</h3>
+                    <p>Establishing new churches in communities that need the Gospel</p>
+                </div>
+                <div class="vision-card">
+                    <div class="vision-icon">💪</div>
+                    <h3>Equip</h3>
+                    <p>Training pastors and leaders for effective ministry</p>
+                </div>
+                <div class="vision-card">
+                    <div class="vision-icon">🤝</div>
+                    <h3>Support</h3>
+                    <p>Providing ongoing assistance and fellowship</p>
+                </div>
+                <div class="vision-card">
+                    <div class="vision-icon">🎯</div>
+                    <h3>Multiply</h3>
+                    <p>Encouraging daughter churches to plant more churches</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partnership CTA -->
+        <div class="partnership-cta">
+            <h2>Partner With Us in Church Planting</h2>
+            <p>God is calling laborers into the harvest. Join us in reaching more communities with the Gospel.</p>
+            <div class="cta-buttons">
+                <a href="ministries.html#contact" class="btn-primary">Get Involved</a>
+                <a href="index.html#connect" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible Baptist Church</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Worship Times</h4>
+                <p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html#beliefs">What We Believe</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="church-life.html">Church Life</a>
+                <a href="daughter-churches.html">Daughter Churches</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+            <p>Building lives. Strengthening faith. Serving community.</p>
+        </div>
+    </footer>
+
+    <script src="js/base.js"></script>
+</body>
+</html>
