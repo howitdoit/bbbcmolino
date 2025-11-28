@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Berean Bible College</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="css/college.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/college-logo.png" alt="Bible College Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html" class="active">Programs</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" class="church-link">← Back to Church</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Academic Programs</h1>
+            <p class="hero-subtitle">Comprehensive Biblical Training for Ministry</p>
+        </div>
+    </section>
+
+    <!-- Certificate Program -->
+    <section id="certificate" class="program-detail-section">
+        <div class="container">
+            <div class="program-header">
+                <div class="program-icon">📜</div>
+                <h2>Certificate in Ministry</h2>
+                <p class="program-duration">1 Year • 30 Units</p>
+            </div>
+            <div class="program-content">
+                <div class="program-overview">
+                    <p><strong>Ideal for:</strong> Church workers, lay leaders, and those testing their ministry calling</p>
+                    <p>Foundation program providing essential biblical knowledge and practical ministry skills.</p>
+                </div>
+                <div class="program-courses">
+                    <h3>First Semester</h3>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <h4>Old Testament Survey</h4>
+                            <p>3 units</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>New Testament Survey</h4>
+                            <p>3 units</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>Basic Theology</h4>
+                            <p>3 units</p>
+                        </div>
+                    </div>
+                    <h3>Second Semester</h3>
+                    <div class="courses-grid">
+                        <div class="course-item">
+                            <h4>Christian Life & Ethics</h4>
+                            <p>3 units</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>Introduction to Homiletics</h4>
+                            <p>3 units</p>
+                        </div>
+                        <div class="course-item">
+                            <h4>Ministry Practicum</h4>
+                            <p>3 units</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="program-cta">
+                    <a href="admissions.html#certificate" class="btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diploma Program -->
+    <section id="diploma" class="program-detail-section alternate-bg">
+        <div class="container">
+            <div class="program-header">
+                <div class="program-icon">🎓</div>
+                <h2>Diploma in Theology</h2>
+                <p class="program-duration">2 Years • 60 Units</p>
+            </div>
+            <div class="program-content">
+                <div class="program-overview">
+                    <p><strong>Ideal for:</strong> Aspiring pastors, missionaries, and full-time church workers</p>
+                    <p>Comprehensive program with in-depth biblical studies and practical ministry training.</p>
+                </div>
+                <div class="program-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">📖</div>
+                        <h4>Biblical Languages</h4>
+                        <p>Introductory Greek and Hebrew</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">🎤</div>
+                        <h4>Homiletics Training</h4>
+                        <p>Preaching lab with actual sermon delivery</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">⛪</div>
+                        <h4>Church Internship</h4>
+                        <p>One year supervised ministry experience</p>
+                    </div>
+                </div>
+                <div class="program-cta">
+                    <a href="admissions.html#diploma" class="btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bachelor Program -->
+    <section id="bachelor" class="program-detail-section">
+        <div class="container">
+            <div class="program-header">
+                <div class="program-icon">📚</div>
+                <h2>Bachelor of Theology</h2>
+                <p class="program-duration">4 Years • 132 Units</p>
+            </div>
+            <div class="program-content">
+                <div class="program-overview">
+                    <p><strong>Ideal for:</strong> Future pastors, church planters, and theological educators</p>
+                    <p>Professional degree with advanced biblical studies, leadership training, and thesis requirement.</p>
+                </div>
+                <div class="program-structure">
+                    <h3>Program Structure</h3>
+                    <div class="structure-grid">
+                        <div class="structure-item">
+                            <h4>General Education</h4>
+                            <p>36 units</p>
+                        </div>
+                        <div class="structure-item">
+                            <h4>Biblical Studies</h4>
+                            <p>48 units</p>
+                        </div>
+                        <div class="structure-item">
+                            <h4>Theology</h4>
+                            <p>24 units</p>
+                        </div>
+                        <div class="structure-item">
+                            <h4>Practical Ministry</h4>
+                            <p>24 units</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="program-cta">
+                    <a href="admissions.html#bachelor" class="btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Comparison -->
+    <section class="comparison-section section-padding">
+        <div class="container">
+            <h2>Choose Your Program</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Certificate</th>
+                            <th>Diploma</th>
+                            <th>Bachelor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Duration</strong></td>
+                            <td>1 Year</td>
+                            <td>2 Years</td>
+                            <td>4 Years</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Units</strong></td>
+                            <td>30</td>
+                            <td>60</td>
+                            <td>132</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biblical Languages</strong></td>
+                            <td>—</td>
+                            <td>✅ Intro</td>
+                            <td>✅ Advanced</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Internship</strong></td>
+                            <td>✅ Basic</td>
+                            <td>✅ Full Year</td>
+                            <td>✅ Advanced</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thesis</strong></td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✅ Required</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Start Your Ministry Training</h2>
+            <p>Select the program that matches your calling and commitment level</p>
+            <div class="cta-buttons">
+                <a href="admissions.html" class="btn-primary">Apply Today</a>
+                <a href="contact.html" class="btn-secondary">Ask Questions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible College</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📞 Phone</p>
+                    <a href="tel:+639123456789" class="btn-contact">Call</a>
+                <p>✉️ Email</p>
+                    <a href="mailto:college@bbbcmolino.org" class="btn-contact">Send Email</a>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="about.html">About</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="../index.html">Church Website</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible College. All rights reserved.</p>
+            <p>A ministry of Berean Bible Baptist Church Molino</p>
+        </div>
+    </footer>
+
+    <script src="../js/base.js"></script>
+</body>
+</html>

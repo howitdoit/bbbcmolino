@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty - Berean Academy</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="css/academy.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/acad-logo.jpg" alt="Berean Academy Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="faculty.html" class="active">Faculty</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" class="church-link">← Back to Church</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Our Faculty</h1>
+            <p class="hero-subtitle">Dedicated Christian Educators</p>
+        </div>
+    </section>
+
+    <!-- Faculty Stats -->
+    <section class="faculty-stats section-padding">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Qualified Teachers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Born-Again Christians</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Average Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Administration -->
+    <section class="admin-section">
+        <div class="container">
+            <h2>Administration</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card admin-card">
+                    <div class="faculty-photo">
+                        <img src="images/faculty/admin-principal.jpg" alt="Principal">
+                    </div>
+                    <h3>Pastor John Doe</h3>
+                    <h4>Principal</h4>
+                    <p>With over 20 years in Christian education, Pastor John leads with vision and spiritual passion.</p>
+                </div>
+                <div class="faculty-card admin-card">
+                    <div class="faculty-photo">
+                        <img src="images/faculty/admin-vprincipal.jpg" alt="Vice Principal">
+                    </div>
+                    <h3>Mrs. Mary Santos</h3>
+                    <h4>Vice Principal</h4>
+                    <p>Academic coordinator ensuring excellence in curriculum and instruction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preschool Faculty -->
+    <section class="faculty-section section-padding">
+        <div class="container">
+            <h2>Preschool Department</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <div class="faculty-photo">
+                        <img src="images/faculty/preschool-teacher1.jpg" alt="Teacher">
+                    </div>
+                    <h3>Ms. Ana Cruz</h3>
+                    <h4>Nursery Teacher</h4>
+                    <p>Specializes in early childhood development and phonics</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo">
+                        <img src="images/faculty/preschool-teacher2.jpg" alt="Teacher">
+                    </div>
+                    <h3>Mrs. Liza Reyes</h3>
+                    <h4>Kinder Teacher</h4>
+                    <p>15+ years experience in play-based learning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elementary Faculty -->
+    <section class="faculty-section">
+        <div class="container">
+            <h2>Elementary Department</h2>
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <div class="faculty-photo">
+                        <img src="images/faculty/grade1-teacher.jpg" alt="Teacher">
+                    </div>
+                    <h3>Mr. James Lim</h3>
+                    <h4>Grade 1 Teacher</h4>
+                    <p>Math specialist and Bible teacher</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo">
+                        <img src="images/faculty/grade2-teacher.jpg" alt="Teacher">
+                    </div>
+                    <h3>Ms. Rachel Tan</h3>
+                    <h4>Grade 2 Teacher</h4>
+                    <p>Reading and language arts expert</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo">
+                        <img src="images/faculty/grade3-teacher.jpg" alt="Teacher">
+                    </div>
+                    <h3>Mrs. Ellen Garcia</h3>
+                    <h4>Grade 3 Teacher</h4>
+                    <p>Science and social studies</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo">
+                        <img src="images/faculty/specialist.jpg" alt="Teacher">
+                    </div>
+                    <h3>Mr. David Lee</h3>
+                    <h4>Music & PE</h4>
+                    <p>Choir director and sports coach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Meet Our Faculty</h2>
+            <p>Schedule a campus visit to meet our dedicated teachers</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">Schedule Visit</a>
+                <a href="admissions.html" class="btn-secondary">Learn About Admissions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Academy</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📞 Phone</p>
+                    <a href="tel:+639123456789" class="btn-contact">Call</a>
+                <p>✉️ Email</p>
+                    <a href="mailto:academy@bbbcmolino.org" class="btn-contact">Send Email</a>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="programs.html">Programs</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="../index.html">Church Website</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Academy. All rights reserved.</p>
+            <p>A ministry of Berean Bible Baptist Church Molino</p>
+        </div>
+    </footer>
+
+    <script src="../js/base.js"></script>
+</body>
+</html>

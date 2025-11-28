@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Berean Bible College</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="css/college.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/college-logo.png" alt="Bible College Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admissions.html" class="active">Admissions</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" class="church-link">← Back to Church</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Admissions</h1>
+            <p class="hero-subtitle">Answer Your Call to Ministry</p>
+        </div>
+    </section>
+
+    <!-- Admission Requirements -->
+    <section class="requirements-section section-padding">
+        <div class="container">
+            <h2>Admission Requirements</h2>
+            <div class="requirements-tabs">
+                <button class="tab-button active" onclick="switchTab('certificate-req')">Certificate</button>
+                <button class="tab-button" onclick="switchTab('diploma-req')">Diploma</button>
+                <button class="tab-button" onclick="switchTab('bachelor-req')">Bachelor</button>
+            </div>
+            <div id="certificate-req" class="tab-content active">
+                <div class="requirements-grid">
+                    <div class="requirements-card">
+                        <h3>Spiritual Requirements</h3>
+                        <ul>
+                            <li>Born-again Christian</li>
+                            <li>Evidence of salvation</li>
+                            <li>Call to ministry</li>
+                            <li>Pastor's recommendation</li>
+                        </ul>
+                    </div>
+                    <div class="requirements-card">
+                        <h3>Academic Requirements</h3>
+                        <ul>
+                            <li>High school graduate</li>
+                            <li>Transcript of records</li>
+                            <li>2x2 ID pictures (4 pcs)</li>
+                            <li>Birth certificate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="diploma-req" class="tab-content">
+                <div class="requirements-grid">
+                    <div class="requirements-card">
+                        <h3>Spiritual Requirements</h3>
+                        <ul>
+                            <li>Born-again Christian</li>
+                            <li>Active church member</li>
+                            <li>Ministry experience</li>
+                            <li>2 Pastor recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="requirements-card">
+                        <h3>Academic Requirements</h3>
+                        <ul>
+                            <li>High school graduate</li>
+                            <li>College units (preferred)</li>
+                            <li>Entrance exam</li>
+                            <li>Interview</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="bachelor-req" class="tab-content">
+                <div class="requirements-grid">
+                    <div class="requirements-card">
+                        <h3>Spiritual Requirements</h3>
+                        <ul>
+                            <li>Definite call to full-time ministry</li>
+                            <li>Proven ministry involvement</li>
+                            <li>3 references (pastoral, academic, personal)</li>
+                            <li>Spiritual interview</li>
+                        </ul>
+                    </div>
+                    <div class="requirements-card">
+                        <h3>Academic Requirements</h3>
+                        <ul>
+                            <li>High school diploma</li>
+                            <li>Entrance examination</li>
+                            <li>Academic interview</li>
+                            <li>Writing sample</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="process-section">
+        <div class="container">
+            <h2>Application Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Request Information</h3>
+                    <p>Contact us or fill out our inquiry form</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Submit Application</h3>
+                    <p>Complete application form with all requirements</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Entrance Exam</h3>
+                    <p>Take our biblical knowledge assessment</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Interview</h3>
+                    <p>Personal interview with admissions committee</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Acceptance</h3>
+                    <p>Receive acceptance and begin ministry training</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Apply -->
+    <section class="apply-section section-padding">
+        <div class="container">
+            <h2>Quick Application</h2>
+            <p class="apply-subtitle">Start your application in 2 minutes</p>
+            <form class="apply-form" id="quickApplyForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Program Level *</label>
+                        <select name="program" required>
+                            <option value="">Select Program</option>
+                            <option value="certificate">Certificate in Ministry</option>
+                            <option value="diploma">Diploma in Theology</option>
+                            <option value="bachelor">Bachelor of Theology</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Current Church *</label>
+                    <input type="text" name="church" required>
+                </div>
+                <div class="form-group">
+                    <label>Why Ministry? *</label>
+                    <textarea name="calling" rows="4" placeholder="Tell us about your calling to ministry..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="dates-section section-padding">
+        <div class="container">
+            <h2>Academic Calendar</h2>
+            <div class="dates-grid">
+                <div class="date-item">
+                    <div class="date-label">Applications Open</div>
+                    <div class="date-value">Year-Round</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">Fall Semester</div>
+                    <div class="date-value">June - October</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">Spring Semester</div>
+                    <div class="date-value">November - March</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">Summer Term</div>
+                    <div class="date-value">April - May</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Begin Your Ministry Journey</h2>
+            <p>God is calling - will you answer?</p>
+            <div class="cta-buttons">
+                <a href="#quickApplyForm" class="btn-primary">Apply Now</a>
+                <a href="contact.html" class="btn-secondary">Schedule Interview</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible College</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📞 Phone</p>
+                    <a href="tel:+639123456789" class="btn-contact">Call</a>
+                <p>✉️ Email</p>
+                    <a href="mailto:college@bbbcmolino.org" class="btn-contact">Send Email</a>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="programs.html">Programs</a>
+                <a href="about.html">About</a>
+                <a href="../index.html">Church Website</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible College. All rights reserved.</p>
+            <p>A ministry of Berean Bible Baptist Church Molino</p>
+        </div>
+    </footer>
+
+    <script src="../js/base.js"></script>
+    <script>
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Quick Apply Form
+        document.getElementById('quickApplyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Application submitted successfully! We will contact you within 48 hours to schedule your interview.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

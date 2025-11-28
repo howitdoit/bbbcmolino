@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs - Berean Academy</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="css/academy.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/acad-logo.jpg" alt="Berean Academy Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html" class="active">Programs</a></li>
+                <li><a href="admissions.html">Admissions</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" class="church-link">← Back to Church</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Our Programs</h1>
+            <p class="hero-subtitle">Christ-Centered Education for Every Age</p>
+        </div>
+    </section>
+
+    <!-- Programs Overview -->
+    <section id="preschool" class="program-detail-section">
+        <div class="container">
+            <div class="program-header">
+                <div class="program-icon">👶</div>
+                <h2>Preschool Program</h2>
+                <p class="program-age">Ages 3-5 • Nursery to Kinder</p>
+            </div>
+            <div class="program-content">
+                <div class="program-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎲</div>
+                        <h4>Play-Based Learning</h4>
+                        <p>Fun, hands-on activities that spark curiosity and creativity</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📖</div>
+                        <h4>Bible Stories Daily</h4>
+                        <p>Learning God's love through age-appropriate Bible lessons</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✏️</div>
+                        <h4>Early Literacy</h4>
+                        <p>Phonics, reading readiness, and writing foundations</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔢</div>
+                        <h4>Math Foundations</h4>
+                        <p>Counting, shapes, patterns through games and songs</p>
+                    </div>
+                </div>
+                <div class="program-cta">
+                    <a href="admissions.html#preschool" class="btn-primary">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elementary Program -->
+    <section id="elementary" class="program-detail-section alternate-bg">
+        <div class="container">
+            <div class="program-header">
+                <div class="program-icon">📚</div>
+                <h2>Elementary Program</h2>
+                <p class="program-age">Grades 1-5</p>
+            </div>
+            <div class="program-content">
+                <div class="program-curriculum">
+                    <h3>Complete Curriculum</h3>
+                    <div class="curriculum-grid">
+                        <div class="curriculum-item">
+                            <h4>Core Subjects</h4>
+                            <ul>
+                                <li>English Language Arts</li>
+                                <li>Mathematics</li>
+                                <li>Science</li>
+                                <li>Filipino</li>
+                                <li>Social Studies</li>
+                            </ul>
+                        </div>
+                        <div class="curriculum-item">
+                            <h4>Special Subjects</h4>
+                            <ul>
+                                <li>Bible (Daily)</li>
+                                <li>Music & Arts</li>
+                                <li>Physical Education</li>
+                                <li>Computer Literacy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="program-cta">
+                    <a href="admissions.html#elementary" class="btn-primary">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Comparison -->
+    <section class="comparison-section section-padding">
+        <div class="container">
+            <h2>Program Comparison</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Preschool</th>
+                            <th>Elementary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Age/Grade</strong></td>
+                            <td>3-5 years</td>
+                            <td>Grades 1-5</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Daily Bible</strong></td>
+                            <td>✅ Stories & Songs</td>
+                            <td>✅ Full Curriculum</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Class Size</strong></td>
+                            <td>15 max</td>
+                            <td>20 max</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Teacher Ratio</strong></td>
+                            <td>1:12</td>
+                            <td>1:15</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tuition</strong></td>
+                            <td>✅ FREE</td>
+                            <td>✅ FREE</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Start?</h2>
+            <p>Choose the perfect program for your child's age and needs</p>
+            <div class="cta-buttons">
+                <a href="admissions.html" class="btn-primary">Apply Today</a>
+                <a href="contact.html" class="btn-secondary">Schedule a Tour</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Academy</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📞 Phone</p>
+                    <a href="tel:+639123456789" class="btn-contact">Call</a>
+                <p>✉️ Email</p>
+                    <a href="mailto:academy@bbbcmolino.org" class="btn-contact">Send Email</a>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="about.html">About</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="../index.html">Church Website</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Academy. All rights reserved.</p>
+            <p>A ministry of Berean Bible Baptist Church Molino</p>
+        </div>
+    </footer>
+
+    <script src="../js/base.js"></script>
+</body>
+</html>

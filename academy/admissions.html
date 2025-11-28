@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Berean Academy</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="css/academy.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/acad-logo.jpg" alt="Berean Academy Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="admissions.html" class="active">Admissions</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../index.html" class="church-link">← Back to Church</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Admissions</h1>
+            <p class="hero-subtitle">Simple Steps to Join Our Family</p>
+        </div>
+    </section>
+
+    <!-- Admissions Process -->
+    <section class="process-section section-padding">
+        <div class="container">
+            <h2>Admission Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Inquire</h3>
+                    <p>Contact us to schedule a campus tour and discuss your child's needs</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Submit Application</h3>
+                    <p>Complete our simple online application form</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Assessment</h3>
+                    <p>Age-appropriate assessment to determine readiness</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Acceptance</h3>
+                    <p>Receive your acceptance letter and start date</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements -->
+    <section class="requirements-section">
+        <div class="container">
+            <h2>Admission Requirements</h2>
+            <div class="requirements-grid">
+                <div id="preschool" class="requirements-card">
+                    <h3>Preschool</h3>
+                    <ul>
+                        <li>Child must be 3-5 years old</li>
+                        <li>Birth certificate</li>
+                        <li>2x2 ID photo</li>
+                        <li>Medical/Health card</li>
+                        <li>Baptismal certificate (optional)</li>
+                    </ul>
+                </div>
+                <div id="elementary" class="requirements-card">
+                    <h3>Elementary</h3>
+                    <ul>
+                        <li>Previous school records</li>
+                        <li>Good moral character</li>
+                        <li>2x2 ID photo (2 pcs)</li>
+                        <li>Birth certificate</li>
+                        <li>Recommendation letter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Apply -->
+    <section class="apply-section section-padding">
+        <div class="container">
+            <h2>Quick Apply</h2>
+            <p class="apply-subtitle">Start your application in less than 2 minutes</p>
+            <form class="apply-form" id="quickApplyForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Child's Full Name</label>
+                        <input type="text" name="childName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Program Level</label>
+                        <select name="program" required>
+                            <option value="">Select Program</option>
+                            <option value="preschool">Preschool (3-5 years)</option>
+                            <option value="elementary">Elementary (Grades 1-5)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Parent's Name</label>
+                        <input type="text" name="parentName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Message (Optional)</label>
+                    <textarea name="message" rows="3" placeholder="Any questions or special requirements..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="dates-section">
+        <div class="container">
+            <h2>Important Dates</h2>
+            <div class="dates-grid">
+                <div class="date-item">
+                    <div class="date-label">Applications Open</div>
+                    <div class="date-value">Year-Round</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">School Year Starts</div>
+                    <div class="date-value">June 2026</div>
+                </div>
+                <div class="date-item">
+                    <div class="date-label">Campus Tours</div>
+                    <div class="date-value">By Appointment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Join Berean Academy Today</h2>
+            <p>Spaces are limited - secure your child's Christian education now</p>
+            <div class="cta-buttons">
+                <a href="#quickApplyForm" class="btn-primary">Apply Now</a>
+                <a href="contact.html" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Academy</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📞 Phone</p>
+                    <a href="tel:+639123456789" class="btn-contact">Call</a>
+                <p>✉️ Email</p>
+                    <a href="mailto:academy@bbbcmolino.org" class="btn-contact">Send Email</a>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="programs.html">Programs</a>
+                <a href="about.html">About</a>
+                <a href="../index.html">Church Website</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Academy. All rights reserved.</p>
+            <p>A ministry of Berean Bible Baptist Church Molino</p>
+        </div>
+    </footer>
+
+    <script src="../js/base.js"></script>
+    <script>
+        // Quick Apply Form Handler
+        document.getElementById('quickApplyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will contact you within 24-48 hours to schedule your campus tour.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
