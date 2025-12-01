@@ -1125,3 +1125,75 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* ========== CURRICULUM SPECIFIC STYLES ========== */
+
+.year-section {
+    margin-bottom: 4rem;
+}
+
+.year-section h3 {
+    color: #065f46;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+    border-top: 3px solid #10b981;
+}
+
+.semester-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.semester-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(6, 95, 70, 0.1);
+    border-left: 5px solid #10b981;
+}
+
+.semester-card h4 {
+    color: #065f46;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.course-list li {
+    padding: 0.75rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+    font-size: 1rem;
+}
+
+.course-list li:last-child {
+    border-bottom: none;
+}
+
+.course-list li::before {
+    content: "📖";
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .semester-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .year-section h3 {
+        font-size: 1.6rem;
+    }
+}
