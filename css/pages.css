@@ -15,7 +15,7 @@
 }
 
 .featured-card {
-    background: linear-gradient(135deg, rgba(100, 149, 237, 0.05) 0%, rgba(30, 60, 114, 0.05) 100%);
+    background: white;
 }
 
 /* Content Sections with Images */
@@ -72,6 +72,7 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(100, 149, 237, 0.3);
+    background-color: white;
 }
 
 .content-image img {
@@ -309,7 +310,6 @@
 
 /* Placeholder icon while image loads */
 .sermon-thumbnail::before {
-    content: '📖';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -660,7 +660,6 @@
 }
 
 .missionary-photo::before {
-    content: '👤';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -913,7 +912,6 @@
 }
 
 .church-image::before {
-    content: '⛪';
     position: absolute;
     top: 50%;
     left: 50%;
