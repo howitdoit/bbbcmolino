@@ -1,29 +1,265 @@
 // ========== BASE JAVASCRIPT (Used on all pages) ==========
 
-// Toggle mobile menu
-function toggleMenu() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('active');
+// Set default image for all images without source or that fail to load
+function setDefaultImageForAllImages() {
+    const defaultImage = 'images/logo/church-logo.png';
+    
+    // Handle images without src or with empty src
+    document.querySelectorAll('img').forEach(img => {
+        // Skip logo images
+        if (img.closest('.logo-container') || img.src.includes('church-logo.png')) {
+            return;
+        }
+        
+        // Handle images without src or with empty/invalid src
+        if (!img.src || 
+            img.src === window.location.href || 
+            img.src.endsWith('#') || 
+            img.getAttribute('src') === '' ||
+            img.getAttribute('src') === '#' ||
+            !img.hasAttribute('src')) {
+            img.src = defaultImage;
+        }
+        
+        // Add error handler if not already present
+        if (!img.hasAttribute('data-default-handler')) {
+            img.setAttribute('data-default-handler', 'true');
+            const originalOnError = img.onerror;
+            img.onerror = function() {
+                // Prevent infinite loop
+                if (this.src !== defaultImage && !this.src.includes('church-logo.png')) {
+                    this.src = defaultImage;
+                    this.onerror = null; // Clear error handler after setting default
+                } else if (originalOnError) {
+                    originalOnError.call(this);
+                }
+            };
+        }
+    });
 }
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (!link.classList.contains('dropbtn')) {
-            document.getElementById('navLinks').classList.remove('active');
+// Global error handler for dynamically added images
+document.addEventListener('error', function(e) {
+    if (e.target.tagName === 'IMG') {
+        const defaultImage = 'images/logo/church-logo.png';
+        const img = e.target;
+        
+        // Skip logo images
+        if (img.closest('.logo-container') || img.src.includes('church-logo.png')) {
+            return;
         }
+        
+        // Set default image if error occurs
+        if (img.src !== defaultImage) {
+            img.src = defaultImage;
+            img.onerror = null; // Prevent infinite loop
+        }
+    }
+}, true);
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', setDefaultImageForAllImages);
+
+// Also run after delays to catch dynamically loaded images
+setTimeout(setDefaultImageForAllImages, 500);
+setTimeout(setDefaultImageForAllImages, 2000);
+
+// Use MutationObserver to handle dynamically added images
+const imageObserver = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        mutation.addedNodes.forEach(function(node) {
+            if (node.nodeType === 1) { // Element node
+                if (node.tagName === 'IMG') {
+                    setDefaultImageForAllImages();
+                } else if (node.querySelectorAll) {
+                    const images = node.querySelectorAll('img');
+                    if (images.length > 0) {
+                        setDefaultImageForAllImages();
+                    }
+                }
+            }
+        });
     });
 });
 
-// Handle dropdown on mobile
-const dropdownBtns = document.querySelectorAll('.dropdown .dropbtn');
-dropdownBtns.forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            this.parentElement.classList.toggle('active');
-        }
+// Start observing
+document.addEventListener('DOMContentLoaded', function() {
+    imageObserver.observe(document.body, {
+        childList: true,
+        subtree: true
     });
+});
+
+// Create mobile menu overlay if it doesn't exist
+function createMobileOverlay() {
+    if (!document.querySelector('.mobile-menu-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-menu-overlay';
+        overlay.addEventListener('click', closeMobileMenu);
+        document.body.appendChild(overlay);
+    }
+}
+
+// Toggle mobile menu
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    
+    // Create overlay if it doesn't exist
+    if (!overlay) {
+        createMobileOverlay();
+    }
+    
+    const isActive = navLinks.classList.contains('active');
+    
+    if (isActive) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
+    }
+}
+
+// Open mobile menu - Optimized
+function openMobileMenu() {
+    // Update menu position before opening
+    updateMobileMenuPosition();
+    
+    const navLinks = document.getElementById('navLinks');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    
+    // Use requestAnimationFrame for smoother performance
+    requestAnimationFrame(() => {
+        navLinks.classList.add('active');
+        if (mobileMenu) mobileMenu.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Re-initialize dropdowns when menu opens
+        setTimeout(() => {
+            initDropdowns();
+        }, 50);
+        
+        // Update position multiple times to ensure accuracy after layout changes
+        requestAnimationFrame(() => {
+            updateMobileMenuPosition();
+            setTimeout(() => updateMobileMenuPosition(), 50);
+            setTimeout(() => updateMobileMenuPosition(), 100);
+        });
+    });
+}
+
+// Close mobile menu - Optimized
+function closeMobileMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    
+    // Use requestAnimationFrame for smoother performance
+    requestAnimationFrame(() => {
+        navLinks.classList.remove('active');
+        if (mobileMenu) mobileMenu.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+}
+
+// Initialize overlay on page load
+document.addEventListener('DOMContentLoaded', () => {
+    createMobileOverlay();
+    // Update menu position after DOM is ready
+    setTimeout(updateMobileMenuPosition, 100);
+    setTimeout(updateMobileMenuPosition, 500);
+});
+
+// Close mobile menu when clicking on a link (non-dropdown) - Optimized
+// Use event delegation to handle dynamically added elements
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('.nav-links a');
+    if (!link || !document.getElementById('navLinks')?.classList.contains('active')) {
+        return; // Not a nav link or menu not open
+    }
+    
+    // Don't close if it's a dropdown button
+    if (link.classList.contains('dropbtn')) {
+        return; // Let dropdown handler take care of it
+    }
+    
+    // Check if it's a dropdown content link
+    const isDropdownLink = link.closest('.dropdown-content');
+    if (!isDropdownLink) {
+        // Regular link - close menu
+        closeMobileMenu();
+    } else {
+        // Dropdown content link - close menu after navigation
+        setTimeout(() => closeMobileMenu(), 150);
+    }
+});
+
+// Handle dropdown on mobile
+function initDropdowns() {
+    // Only initialize on mobile screens
+    if (window.innerWidth > 768) {
+        return; // Let CSS hover handle desktop dropdowns
+    }
+    
+    // Remove existing listeners to prevent duplicates
+    const dropdownBtns = document.querySelectorAll('.dropdown .dropbtn');
+    dropdownBtns.forEach(btn => {
+        // Check if already has mobile handler (to avoid duplicates)
+        if (btn.dataset.mobileHandler === 'true') {
+            return;
+        }
+        
+        // Mark as having mobile handler
+        btn.dataset.mobileHandler = 'true';
+        
+        // Add event listener for mobile only
+        btn.addEventListener('click', function(e) {
+            // Double check we're on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                
+                const dropdown = this.closest('.dropdown');
+                if (!dropdown) return;
+                
+                // Close other dropdowns
+                document.querySelectorAll('.dropdown').forEach(dd => {
+                    if (dd !== dropdown) {
+                        dd.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+            }
+        }, true); // Use capture phase to ensure it fires first
+    });
+}
+
+// Initialize dropdowns on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initDropdowns();
+});
+
+// Re-initialize on window resize (in case switching between mobile/desktop)
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        // Remove mobile handlers if switching to desktop
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
+                delete btn.dataset.mobileHandler;
+            });
+        } else {
+            // Re-initialize if switching to mobile
+            initDropdowns();
+        }
+    }, 250);
 });
 
 // Smooth scrolling for anchor links
@@ -55,6 +291,80 @@ if (header && !header.classList.contains('solid')) {
         }
     });
 }
+
+// Update mobile menu position when header scrolls (for mobile only)
+function updateMobileMenuPosition() {
+    if (window.innerWidth <= 768) {
+        const header = document.getElementById('header');
+        const navLinks = document.getElementById('navLinks');
+        const topBar = document.querySelector('.top-bar');
+        
+        if (header && navLinks) {
+            // Force a reflow to get accurate measurements
+            void header.offsetHeight;
+            void topBar?.offsetHeight;
+            
+            // Use offsetHeight for accurate measurements (includes padding, border)
+            const topBarHeight = topBar ? topBar.offsetHeight : 0;
+            const headerHeight = header.offsetHeight;
+            
+            // Calculate menu top position: top bar + header height
+            const menuTop = topBarHeight + headerHeight;
+            
+            // Calculate max height to prevent cutoff
+            const maxHeight = window.innerHeight - menuTop;
+            
+            // Update menu position dynamically
+            navLinks.style.top = menuTop + 'px';
+            navLinks.style.maxHeight = maxHeight + 'px';
+            navLinks.style.bottom = 'auto';
+        }
+    } else {
+        // Reset on desktop
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks) {
+            navLinks.style.top = '';
+        }
+    }
+}
+
+// Update menu position on scroll, resize, and when menu opens
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768) {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            updateMobileMenuPosition();
+            // If menu is open, update its position
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks && navLinks.classList.contains('active')) {
+                updateMobileMenuPosition();
+            }
+        }, 10);
+    }
+});
+
+window.addEventListener('resize', () => {
+    updateMobileMenuPosition();
+});
+
+// Also update when header class changes (scrolled state)
+const headerObserver = new MutationObserver(() => {
+    if (window.innerWidth <= 768) {
+        updateMobileMenuPosition();
+    }
+});
+
+// Observe header for class changes
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
+    if (header) {
+        headerObserver.observe(header, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+    }
+});
 
 // Disable right-click on images and videos
 document.addEventListener('contextmenu', (e) => {
@@ -117,55 +427,3 @@ function updateDateTime() {
 
 updateDateTime();
 setInterval(updateDateTime, 1000);
-
-
-// Automatically load latest posts from Blogger
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https://theword.bbbcmolino.org/feeds/posts/default?alt=rss")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("blog-feed");
-
-    if (!data.items || !Array.isArray(data.items)) {
-      throw new Error("Feed not loaded properly.");
-    }
-
-    const entries = data.items.slice(0, 6);
-    let html = '';
-
-    entries.forEach(entry => {
-      const title = entry.title || "Untitled";
-      const link = entry.link || "#";
-      const published = entry.pubDate
-        ? new Date(entry.pubDate).toLocaleDateString('en-PH', { year: 'numeric', month: 'long', day: 'numeric' })
-        : "Unknown date";
-      const summary = entry.description
-        ? entry.description.replace(/<[^>]+>/g, '').slice(0, 180) + '...'
-        : "No description available.";
-      const thumbnail = entry.thumbnail || "images/logo/church-logo.png";
-
-      html += `
-        <div class="sermon-card">
-          <div class="sermon-thumbnail">
-            <img src="${thumbnail}" alt="${title}">
-          </div>
-          <div class="sermon-info">
-            <h4>${title}</h4>
-            <div class="sermon-meta">
-              <span>📅 ${published}</span>
-            </div>
-            <p class="sermon-description">${summary}</p>
-            <div class="sermon-actions">
-              <a href="${link}" target="_blank" class="btn btn-primary">📖 Read More</a>
-            </div>
-          </div>
-        </div>
-      `;
-    });
-
-    container.innerHTML = html;
-  })
-  .catch(err => {
-    console.error("Error loading blog feed:", err);
-    document.getElementById("blog-feed").innerHTML =
-      "<p style='color:red;'>Unable to load preachings at the moment. Please try again later.</p>";
-  });

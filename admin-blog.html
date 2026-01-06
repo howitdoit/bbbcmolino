@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Blog Admin - BBBC Molino</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        .login-container {
+            max-width: 500px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(100, 149, 237, 0.15);
+        }
+        .login-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #6495ED 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .login-header h1 {
+            margin: 0 0 0.5rem 0;
+        }
+        .login-header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        .login-form {
+            padding: 2rem 0;
+        }
+        .hidden {
+            display: none;
+        }
+        .admin-content-wrapper {
+            margin-top: 0;
+        }
+        .form-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(100, 149, 237, 0.12);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(100, 149, 237, 0.1);
+            border-top: 4px solid #6495ED;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .form-section:hover {
+            box-shadow: 0 12px 40px rgba(100, 149, 237, 0.18);
+            transform: translateY(-2px);
+        }
+        .form-section h2 {
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .posts-list {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(100, 149, 237, 0.12);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(100, 149, 237, 0.1);
+            border-top: 4px solid #1e3c72;
+        }
+        .posts-list h2 {
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(30, 60, 114, 0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e3c72;
+            font-weight: 600;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6495ED;
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .form-group input[type="file"] {
+            padding: 0.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .form-group code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            color: #6495ED;
+            font-family: 'Courier New', monospace;
+        }
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #1e3c72 0%, #6495ED 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(100, 149, 237, 0.4);
+        }
+        .btn-icon {
+            margin-right: 0.5rem;
+        }
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+        }
+        .btn-danger:hover {
+            background: #ff5252;
+        }
+        .posts-list {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(100, 149, 237, 0.15);
+            margin-bottom: 2rem;
+        }
+        .post-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+        .post-item:last-child {
+            margin-bottom: 0;
+        }
+        .post-item:hover {
+            background: white;
+            box-shadow: 0 4px 15px rgba(100, 149, 237, 0.15);
+            transform: translateY(-2px);
+            border-color: #6495ED;
+        }
+        .post-info {
+            flex: 1;
+        }
+        .post-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: #1e3c72;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .post-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .post-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+        .btn-small {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-edit {
+            background: linear-gradient(135deg, #1e3c72 0%, #6495ED 100%);
+            color: white;
+        }
+        .btn-edit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(100, 149, 237, 0.4);
+        }
+        .btn-delete {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+            color: white;
+        }
+        .btn-delete:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+        }
+        .empty-posts {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        .empty-posts-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .alert.show {
+            display: block;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+        .pagination-btn {
+            padding: 0.75rem 1.25rem;
+            border: 2px solid rgba(100, 149, 237, 0.3);
+            background: white;
+            color: #1e3c72;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .pagination-btn:hover:not(:disabled) {
+            background: linear-gradient(135deg, #1e3c72 0%, #6495ED 100%);
+            color: white;
+            border-color: #6495ED;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(100, 149, 237, 0.3);
+        }
+        .pagination-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .pagination-btn.active {
+            background: linear-gradient(135deg, #1e3c72 0%, #6495ED 100%);
+            color: white;
+            border-color: #6495ED;
+            box-shadow: 0 4px 12px rgba(100, 149, 237, 0.3);
+        }
+        .pagination-ellipsis {
+            padding: 0.75rem 0.5rem;
+            color: #666;
+            font-weight: 600;
+        }
+        .pagination-info {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0 1rem;
+        }
+
+        /* Fix for mobile input issues */
+        * {
+            -webkit-tap-highlight-color: rgba(100, 149, 237, 0.2);
+        }
+
+        input, textarea, select, button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(100, 149, 237, 0.3);
+        }
+
+        /* Fix appearance property for better compatibility */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="url"],
+        input[type="file"],
+        textarea {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: 2px solid #6495ED;
+            outline-offset: 2px;
+            -webkit-tap-highlight-color: rgba(100, 149, 237, 0.3);
+        }
+
+        /* Ensure inputs are clickable on mobile */
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            pointer-events: auto !important;
+            touch-action: manipulation;
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            user-select: text;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Ensure form sections are above overlay */
+        .form-section,
+        .posts-list,
+        .login-container,
+        #admin-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            /* Prevent overlay from blocking content when menu is closed */
+            .mobile-menu-overlay:not(.active) {
+                pointer-events: none !important;
+                display: none !important;
+            }
+
+            .mobile-menu-overlay.active {
+                pointer-events: auto;
+                z-index: 999;
+            }
+
+            /* Ensure admin content is above overlay */
+            #admin-container,
+            #login-container {
+                position: relative;
+                z-index: 10;
+            }
+
+            /* Ensure inputs work */
+            body {
+                -webkit-overflow-scrolling: touch;
+                overflow-x: hidden;
+            }
+
+            .login-container {
+                max-width: 100%;
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+                position: relative;
+                z-index: 10;
+            }
+
+            .login-header {
+                padding: 1.5rem;
+            }
+
+            .login-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .form-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .posts-list {
+                padding: 1.5rem;
+            }
+
+            .posts-list h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .post-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .post-info {
+                width: 100%;
+            }
+
+            .post-info h3 {
+                font-size: 1.1rem;
+                word-break: break-word;
+            }
+
+            .post-actions {
+                width: 100%;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .btn-small {
+                width: 100%;
+                padding: 0.75rem;
+                text-align: center;
+            }
+
+            .form-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.875rem 1.25rem;
+            }
+
+            .form-group input[type="file"] {
+                font-size: 0.85rem;
+                touch-action: manipulation;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                font-size: 16px; /* Prevents zoom on iOS */
+                -webkit-appearance: none;
+                border-radius: 8px;
+                padding: 0.875rem;
+                width: 100%;
+                touch-action: manipulation;
+            }
+
+            .form-group small {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+
+            .form-group code {
+                font-size: 0.75rem;
+                word-break: break-all;
+            }
+
+            /* Ensure buttons are tappable */
+            .btn {
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: rgba(100, 149, 237, 0.3);
+                min-height: 44px; /* iOS recommended touch target */
+            }
+
+            .pagination {
+                flex-wrap: wrap;
+                gap: 0.25rem;
+                padding: 0.5rem;
+            }
+
+            .pagination-btn {
+                padding: 0.65rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .pagination-info {
+                width: 100%;
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+
+            #posts-count {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .page-header {
+                margin-top: 35px;
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .page-header button {
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .section-padding {
+                padding: 2rem 1rem;
+            }
+
+            /* File input wrapper */
+            .file-input-wrapper {
+                flex-direction: column !important;
+            }
+
+            .file-input-wrapper button {
+                width: 100% !important;
+                margin-top: 0.5rem !important;
+                min-height: 44px;
+            }
+
+            /* Fix form sections spacing */
+            .form-section {
+                margin-bottom: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .posts-list {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            /* Ensure post items are tappable */
+            .post-item {
+                touch-action: manipulation;
+            }
+
+            .btn-small {
+                min-height: 44px;
+                touch-action: manipulation;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Ensure content is accessible */
+            body {
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .login-container {
+                margin: 1rem 0.5rem;
+                padding: 1rem;
+                position: relative;
+                z-index: 10;
+            }
+
+            .login-header {
+                padding: 1rem;
+            }
+
+            .login-header h1 {
+                font-size: 1.25rem;
+            }
+
+            .form-section,
+            .posts-list {
+                padding: 1rem;
+                border-radius: 12px;
+                position: relative;
+                z-index: 1;
+            }
+
+            /* Ensure inputs work on small screens */
+            .form-group input,
+            .form-group textarea {
+                font-size: 16px; /* Prevents iOS zoom */
+                padding: 0.75rem;
+            }
+
+            .form-section h2,
+            .posts-list h2 {
+                font-size: 1.25rem;
+            }
+
+            .post-item {
+                padding: 0.875rem;
+            }
+
+            .post-info h3 {
+                font-size: 1rem;
+            }
+
+            .page-header {
+                margin-top: 32px;
+                padding: 5rem 1rem 2.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .page-header p {
+                font-size: 0.9rem;
+            }
+
+            .section-padding {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .pagination-btn {
+                padding: 0.6rem 0.875rem;
+                font-size: 0.85rem;
+            }
+
+            .posts-header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+
+            .posts-header h2 {
+                margin-bottom: 0.5rem !important;
+            }
+
+            #posts-count {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* SweetAlert2 Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .swal2-popup {
+                width: 95% !important;
+                margin: 1rem auto !important;
+                padding: 1rem !important;
+            }
+
+            .swal2-title {
+                font-size: 1.25rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .swal2-content {
+                font-size: 0.9rem !important;
+                padding: 0.5rem !important;
+            }
+
+            .swal2-input,
+            .swal2-textarea {
+                font-size: 0.9rem !important;
+                padding: 0.6rem !important;
+                margin: 0.5rem 0 !important;
+            }
+
+            .swal2-textarea {
+                min-height: 120px !important;
+            }
+
+            .swal2-actions {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+
+            .swal2-confirm,
+            .swal2-cancel {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0.75rem !important;
+                font-size: 0.9rem !important;
+            }
+
+            .swal2-html-container {
+                margin: 1rem 0 !important;
+            }
+
+            .swal2-html-container img {
+                max-width: 100% !important;
+                max-height: 120px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .swal2-popup {
+                width: 98% !important;
+                padding: 0.75rem !important;
+            }
+
+            .swal2-title {
+                font-size: 1.1rem !important;
+            }
+
+            .swal2-content {
+                font-size: 0.85rem !important;
+            }
+
+            .swal2-input,
+            .swal2-textarea {
+                font-size: 0.85rem !important;
+                padding: 0.5rem !important;
+            }
+
+            .swal2-textarea {
+                min-height: 100px !important;
+            }
+
+            .swal2-confirm,
+            .swal2-cancel {
+                font-size: 0.85rem !important;
+                padding: 0.65rem !important;
+            }
+        }
+
+        /* Top Bar Mobile Responsive */
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 0.4rem 0;
+            }
+
+            .top-bar-content {
+                padding: 0 1rem;
+            }
+
+            .datetime-info {
+                font-size: 0.75rem;
+                gap: 0.3rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .datetime-info .icon-svg {
+                width: 14px;
+                height: 14px;
+                min-width: 14px;
+            }
+
+            .datetime-info .separator {
+                margin: 0 0.3rem;
+            }
+
+            .datetime-info .timezone {
+                font-size: 0.7rem;
+                display: none; /* Hide timezone on mobile to save space */
+            }
+
+            .datetime-info span {
+                white-space: nowrap;
+            }
+
+            /* Header Mobile Responsive */
+            header {
+                top: 35px;
+                padding: 1rem 0;
+            }
+
+            header.solid {
+                padding: 0.75rem 0;
+            }
+
+            header nav {
+                padding: 0 1rem;
+            }
+
+            .logo-img {
+                max-height: 35px;
+            }
+
+            .nav-links {
+                top: 95px;
+                right: -100%;
+                width: 100%;
+                max-width: 300px;
+                padding: 1rem;
+                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-bar {
+                padding: 0.35rem 0;
+            }
+
+            .top-bar-content {
+                padding: 0 0.75rem;
+            }
+
+            .datetime-info {
+                font-size: 0.7rem;
+                gap: 0.25rem;
+            }
+
+            .datetime-info .icon-svg {
+                width: 12px;
+                height: 12px;
+                min-width: 12px;
+            }
+
+            .datetime-info .separator {
+                margin: 0 0.25rem;
+            }
+
+            /* Compact datetime display on very small screens */
+            .datetime-info span:first-of-type {
+                font-size: 0.65rem;
+            }
+
+            .datetime-info span:nth-of-type(2) {
+                font-size: 0.65rem;
+            }
+
+            /* Header adjustments */
+            header {
+                top: 32px;
+                padding: 0.75rem 0;
+            }
+
+            header.solid {
+                padding: 0.5rem 0;
+            }
+
+            header nav {
+                padding: 0 0.75rem;
+            }
+
+            .logo-img {
+                max-height: 30px;
+            }
+
+            .nav-links {
+                top: 85px;
+                padding: 0.75rem;
+            }
+
+            .nav-links a {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="datetime-info">
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="currentDate"></span>
+                <span class="separator">|</span>
+                <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="currentTime"></span>
+                <span class="timezone">(Manila, PH)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="solid">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="the-word.html">← Back to The Word</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Container (shown first) -->
+    <div id="login-container" class="login-container">
+        <div class="login-header">
+            <h1>🔐 Admin Access</h1>
+            <p>Enter password to manage blog posts</p>
+        </div>
+        <div class="login-form">
+            <div class="form-group">
+                <label for="admin-password">Password</label>
+                <input type="password" id="admin-password" placeholder="Enter admin password" autocomplete="off">
+            </div>
+            <div id="login-alert" class="alert"></div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary" onclick="checkPassword()" style="width: 100%;">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Container (hidden until login) -->
+    <div id="admin-container" class="hidden">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Blog Post Manager</h1>
+            <p>Manage your preachings and blog posts</p>
+            <button onclick="logout()" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.75rem 1.5rem; font-size: 1rem; background: rgba(255, 255, 255, 0.2); border: 2px solid white; color: white;">Logout</button>
+        </div>
+
+        <!-- Main Content -->
+        <section class="section-padding">
+            <!-- Alert Messages -->
+            <div id="alert" class="alert"></div>
+
+            <!-- Preachings Section -->
+            <div class="form-section">
+                <h2 id="form-title">📝 Add New Post</h2>
+                <form id="blog-form">
+                    <input type="hidden" id="post-id">
+                    
+                    <div class="form-group">
+                        <label for="post-title">Title *</label>
+                        <input type="text" id="post-title" required placeholder="Enter post title">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="post-content">Content/Description *</label>
+                        <textarea id="post-content" required placeholder="Enter post content or description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="post-image">Image</label>
+                        <div class="file-input-wrapper" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="file" id="post-image-input" accept="image/*" style="flex: 1;">
+                            <button type="button" class="btn btn-secondary" onclick="clearImageInput()" style="padding: 0.75rem 1rem;">Clear</button>
+                        </div>
+                        <input type="url" id="post-image" placeholder="Or paste Google Drive image link or any image URL">
+                        <small style="color: #666; display: block; margin-top: 0.5rem;">
+                            <strong>Option 1:</strong> Upload image file (JPG, PNG, GIF - max 2MB)<br>
+                            <strong>Option 2:</strong> Google Drive - Right-click image → Get link → Change "view" to "uc" in URL<br>
+                            Example: <code>https://drive.google.com/uc?export=view&id=FILE_ID</code><br>
+                            Leave empty to use default image
+                        </small>
+                        <div id="image-preview" style="margin-top: 1rem; display: none;">
+                            <img id="image-preview-img" src="#" alt="Preview" style="max-width: 100%; max-height: 200px; border-radius: 8px; border: 2px solid #e0e0e0;" onerror="this.style.display='none';">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="post-file">File Attachment (Optional)</label>
+                        <div class="file-input-wrapper" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="file" id="post-file-input" accept=".pdf,.ppt,.pptx,.doc,.docx,.xls,.xlsx" style="flex: 1;">
+                            <button type="button" class="btn btn-secondary" onclick="clearFileInput()" style="padding: 0.75rem 1rem;">Clear</button>
+                        </div>
+                        <input type="text" id="post-file" placeholder="Or paste Google Drive file link or any file URL">
+                        <small style="color: #666; display: block; margin-top: 0.5rem;">
+                            Upload PDF, PPT, DOC, XLS files (max 5MB) or paste a Google Drive shareable link<br>
+                            <strong>Google Drive:</strong> Right-click file → Share → Copy link → Use the shareable link
+                        </small>
+                        <div id="file-info" style="margin-top: 0.5rem; padding: 0.5rem; background: #f0f0f0; border-radius: 5px; display: none;">
+                            <span id="file-name"></span> (<span id="file-size"></span>)
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                            <span class="btn-icon">💾</span>Add Post
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;" onclick="resetForm()">
+                            <span class="btn-icon">❌</span>Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Existing Posts List -->
+            <div class="posts-list">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 style="margin: 0;">📚 Existing Posts</h2>
+                    <span id="posts-count" style="color: #666; font-size: 0.95rem; font-weight: 600; background: #f0f4ff; padding: 0.5rem 1rem; border-radius: 8px;"></span>
+                </div>
+                <div id="posts-container">
+                    <!-- Posts will be loaded here -->
+                </div>
+                <div id="pagination-container" class="pagination">
+                    <!-- Pagination will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Bible Reading Calendar Section -->
+            <div class="form-section">
+                <h2>📝 Bible Reading Calendar</h2>
+                <form id="bible-calendar-form">
+                    <div class="form-group">
+                        <label for="bible-calendar-title">Title *</label>
+                        <input type="text" id="bible-calendar-title" required placeholder="e.g., January 2025 Reading Plan">
+                    </div>
+                    <div class="form-group">
+                        <label for="bible-calendar-description">Description (Optional)</label>
+                        <textarea id="bible-calendar-description" placeholder="Brief description of the reading plan"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="bible-calendar-file">File *</label>
+                        <div class="file-input-wrapper" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="file" id="bible-calendar-file-input" accept=".pdf,.doc,.docx,.xls,.xlsx" style="flex: 1;">
+                            <button type="button" class="btn btn-secondary" onclick="clearResourceFileInput('bible-calendar')" style="padding: 0.75rem 1rem;">Clear</button>
+                        </div>
+                        <input type="text" id="bible-calendar-file" placeholder="Or paste Google Drive file link or any file URL">
+                        <small style="color: #666; display: block; margin-top: 0.5rem;">
+                            Upload PDF, DOC, XLS files (max 5MB) or paste a Google Drive shareable link
+                        </small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">💾 Add Bible Reading Calendar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Bible Reading Calendar Files List -->
+            <div class="posts-list">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 style="margin: 0;">📝 Bible Reading Calendar Files</h2>
+                    <span id="bible-calendar-count" style="color: #666; font-size: 0.95rem; font-weight: 600; background: #f0f4ff; padding: 0.5rem 1rem; border-radius: 8px;"></span>
+                </div>
+                <div id="bible-calendar-container">
+                    <!-- Files will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Discipleship Lesson Section -->
+            <div class="form-section">
+                <h2>💡 Discipleship Lesson</h2>
+                <form id="discipleship-form">
+                    <div class="form-group">
+                        <label for="discipleship-title">Title *</label>
+                        <input type="text" id="discipleship-title" required placeholder="e.g., Lesson 1: Prayer">
+                    </div>
+                    <div class="form-group">
+                        <label for="discipleship-description">Description (Optional)</label>
+                        <textarea id="discipleship-description" placeholder="Brief description of the lesson"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="discipleship-file">File *</label>
+                        <div class="file-input-wrapper" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="file" id="discipleship-file-input" accept=".pdf,.doc,.docx,.ppt,.pptx" style="flex: 1;">
+                            <button type="button" class="btn btn-secondary" onclick="clearResourceFileInput('discipleship')" style="padding: 0.75rem 1rem;">Clear</button>
+                        </div>
+                        <input type="text" id="discipleship-file" placeholder="Or paste Google Drive file link or any file URL">
+                        <small style="color: #666; display: block; margin-top: 0.5rem;">
+                            Upload PDF, DOC, PPT files (max 5MB) or paste a Google Drive shareable link
+                        </small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">💾 Add Discipleship Lesson</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Discipleship Lesson Files List -->
+            <div class="posts-list">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 style="margin: 0;">💡 Discipleship Lesson Files</h2>
+                    <span id="discipleship-count" style="color: #666; font-size: 0.95rem; font-weight: 600; background: #f0f4ff; padding: 0.5rem 1rem; border-radius: 8px;"></span>
+                </div>
+                <div id="discipleship-container">
+                    <!-- Files will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Berean Daily Journal Section -->
+            <div class="form-section">
+                <h2>📓 Berean Daily Journal</h2>
+                <form id="daily-journal-form">
+                    <div class="form-group">
+                        <label for="daily-journal-title">Title *</label>
+                        <input type="text" id="daily-journal-title" required placeholder="e.g., January 2025 Journal">
+                    </div>
+                    <div class="form-group">
+                        <label for="daily-journal-description">Description (Optional)</label>
+                        <textarea id="daily-journal-description" placeholder="Brief description of the journal"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="daily-journal-file">File *</label>
+                        <div class="file-input-wrapper" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="file" id="daily-journal-file-input" accept=".pdf,.doc,.docx" style="flex: 1;">
+                            <button type="button" class="btn btn-secondary" onclick="clearResourceFileInput('daily-journal')" style="padding: 0.75rem 1rem;">Clear</button>
+                        </div>
+                        <input type="text" id="daily-journal-file" placeholder="Or paste Google Drive file link or any file URL">
+                        <small style="color: #666; display: block; margin-top: 0.5rem;">
+                            Upload PDF, DOC files (max 5MB) or paste a Google Drive shareable link
+                        </small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">💾 Add Daily Journal</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Daily Journal Files List -->
+            <div class="posts-list">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 style="margin: 0;">📓 Berean Daily Journal Files</h2>
+                    <span id="daily-journal-count" style="color: #666; font-size: 0.95rem; font-weight: 600; background: #f0f4ff; padding: 0.5rem 1rem; border-radius: 8px;"></span>
+                </div>
+                <div id="daily-journal-container">
+                    <!-- Files will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Sunday School Materials Section -->
+            <div class="form-section">
+                <h2>🎓 Sunday School Materials</h2>
+                <form id="sunday-school-form">
+                    <div class="form-group">
+                        <label for="sunday-school-title">Title *</label>
+                        <input type="text" id="sunday-school-title" required placeholder="e.g., Children's Lesson Week 1">
+                    </div>
+                    <div class="form-group">
+                        <label for="sunday-school-description">Description (Optional)</label>
+                        <textarea id="sunday-school-description" placeholder="Brief description of the materials"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="sunday-school-file">File *</label>
+                        <div class="file-input-wrapper" style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="file" id="sunday-school-file-input" accept=".pdf,.doc,.docx,.ppt,.pptx" style="flex: 1;">
+                            <button type="button" class="btn btn-secondary" onclick="clearResourceFileInput('sunday-school')" style="padding: 0.75rem 1rem;">Clear</button>
+                        </div>
+                        <input type="text" id="sunday-school-file" placeholder="Or paste Google Drive file link or any file URL">
+                        <small style="color: #666; display: block; margin-top: 0.5rem;">
+                            Upload PDF, DOC, PPT files (max 5MB) or paste a Google Drive shareable link
+                        </small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">💾 Add Sunday School Material</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sunday School Materials Files List -->
+            <div class="posts-list">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 style="margin: 0;">🎓 Sunday School Materials Files</h2>
+                    <span id="sunday-school-count" style="color: #666; font-size: 0.95rem; font-weight: 600; background: #f0f4ff; padding: 0.5rem 1rem; border-radius: 8px;"></span>
+                </div>
+                <div id="sunday-school-container">
+                    <!-- Files will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible Baptist Church</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Worship Times</h4>
+                <p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html#beliefs">What We Believe</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="church-life.html">Church Life</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+            <p>Building lives. Strengthening faith. Serving community.</p>
+        </div>
+    </footer>
+
+    <script src="js/base.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="js/blog-admin.js"></script>
+</body>
+</html>
