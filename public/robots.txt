@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin-blog
+
+# Sitemap location
+Sitemap: https://www.bbbcmolino.org/sitemap.xml

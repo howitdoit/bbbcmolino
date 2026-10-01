@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBBC Molino - Welcome</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+    <!-- Top Bar with Time and Date -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-bar-left">
+                <div class="datetime-info">
+                    <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span id="currentDate"></span>
+                </div>
+            </div>
+            <div class="top-bar-center">
+                <span class="faith-statement">Jesus Christ our Lord and Savior</span>
+            </div>
+            <div class="top-bar-right">
+                <div class="datetime-info">
+                    <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span id="currentTime"></span>
+                    <span class="separator">|</span>
+                    <span class="timezone">(Manila, PH)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="images/logo/church-logo.png" alt="BBBC Molino Logo" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#beliefs">What We Believe</a></li>
+                <li class="dropdown">
+                    <a href="ministries.html" class="dropbtn">Ministries ▾</a>
+                    <div class="dropdown-content">
+                        <a href="academy/index.html">Berean Academy</a>
+                        <a href="college/index.html">Bible College</a>
+                        <a href="daughter-churches.html">Daughter Churches</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="church-life.html" class="dropbtn">Church Life ▾</a>
+                    <div class="dropdown-content">
+                        <a href="the-word.html">The Word</a>
+                        <a href="highlights.html">Highlights</a>
+                    </div>
+                </li>
+                <li><a href="index.html#visit">Plan Your Visit</a></li>
+                <li><a href="index.html#connect">Connect With Us</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="videos/church-hero.mp4" type="video/mp4">
+            <source src="videos/church-hero.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p>Building lives, strengthening faith, and serving our community through God's love</p>
+            <h1><span class="highlight">Berean Bible Baptist Church<br>Molino</span></h1>
+            <a href="#visit" class="cta-button">Plan Your Visit</a>
+        </div>
+    </section>
+
+    <!-- Beliefs Section -->
+    <section id="beliefs" class="section-padding">
+        <h2>What We Believe</h2>
+        <div class="belief-container">
+            <div class="belief-info">
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h3>The Bible "King James Version"</h3>
+                <p>We believe in the divine inspiration and authority of the Holy Scriptures as the complete revelation of God's will.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">✝️</div>
+                <h3>The Gospel</h3>
+                <p>Salvation through faith in Jesus Christ alone, by grace through faith, not by works.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⛪</div>
+                <h3>The Church</h3>
+                <p>We are a community of believers called to worship, fellowship, and serve together in Christ's name.</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Your Visit Section -->
+    <section id="visit" class="section-padding">
+        <h2>Plan Your Visit</h2>
+        <div class="visit-container">
+            <div class="visit-info">
+                <div class="card">
+                    <div class="card-icon">🕐</div>
+                    <h3>Worship Times</h3>
+                    <p>Sunday Morning: 7:45 AM<br>Sunday Evening: 4:45 PM<br>Wednesday Prayer Meeting: 5:45 PM</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚗</div>
+                    <h3>Location & Parking</h3>
+                    <p>Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines<br>Free parking available for all services and events.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">❓</div>
+                    <h3>What to Expect</h3>
+                    <p>Friendly atmosphere, biblical preaching, and warm fellowship. Come as you are!</p>
+                </div>
+            </div>
+
+            <!-- Map and Weather Section -->
+            <div class="location-details">
+                <div class="map-container">
+                    <h3>📍 Find Us</h3>
+                    <p class="address-text">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Magdiwang Road, Molino 2, Bacoor, 4102 Cavite, Philippines
+                    </p>
+                    <div class="map-actions">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=14.4054739818229,120.98200747573884" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="map-btn">
+                            🗺️ Get Directions
+                        </a>
+                        <a href="https://www.google.com/maps/place/Berean+Bible+Baptist+Church/@14.4054739818229,120.98200747573884,15z/data=!4m6!3m5!1s0x3397d22b037f3787:0x27b4beb7ecd5a3f4!8m2!3d14.4054739818229!4d120.98200747573884!16s%2Fg%2F11c5q8v5qj?entry=ttu" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="map-btn map-btn-secondary">
+                            📍 View on Google Maps
+                        </a>
+                    </div>
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3864.376026984156!2d120.98200747573884!3d14.4054739818229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d22b037f3787%3A0x27b4beb7ecd5a3f4!2sBerean%20Bible%20Baptist%20Church!5e0!3m2!1sen!2sph!4v1761782669832!5m2!1sen!2sph" 
+                            width="600" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Berean Bible Baptist Church Location">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="weather-container">
+                    <h3>🌤️ Current Weather in Bacoor</h3>
+                    <div class="weather-widget" id="weatherWidget">
+                        <div class="weather-loading">Loading weather data...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect With Us Section -->
+    <section id="connect" class="section-padding">
+        <h2>Connect With Us</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>We'd love to meet you! Join us for worship and fellowship this Sunday.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📧</div>
+                <h3>Get In Touch</h3>
+                <p>Have questions? Reach out to us and we'll be happy to help.</p>
+                <a href="mailto:info@bbbcmolino.org" class="btn-contact">Send Email</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <h3>Join a Community</h3>
+                <p>Connect with others through our small groups and ministries.</p>
+                <a href="ministries.html" class="contact-link">Explore Ministries</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Berean Bible Baptist Church</h4>
+                <p>📍 Magdiwang Road, Molino 2<br>Bacoor, 4102 Cavite, Philippines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Worship Times</h4>
+                <p>Sunday: 7:45 AM & 4:45 PM<br>Wednesday: 5:45 PM</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="beliefs.html">What We Believe</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="church-life.html">Church Life</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Berean Bible Baptist Church Molino. All rights reserved.</p>
+            <p>Building lives. Strengthening faith. Serving community.</p>
+        </div>
+    </footer>
+
+    <script src="js/base.js"></script>
+    <script src="js/homepage.js"></script>
+</body>
+</html>

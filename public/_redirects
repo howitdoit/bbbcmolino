@@ -1,0 +1,14 @@
+# BBBC Molino - Legacy URL 301 redirects to modern routes
+/index.html            /                    301
+/ministries.html       /ministries          301
+/church-life.html      /church-life         301
+/the-word.html         /the-word            301
+/highlights.html       /highlights          301
+/daughter-churches.html /daughter-churches   301
+/admin-blog.html       /admin-blog          301
+/view-posts.html       /view-posts          301
+/academy/index.html    /academy             301
+/college/index.html    /college             301
+
+# Cloudflare Pages SPA fallback routing
+/*                     /index.html          200
